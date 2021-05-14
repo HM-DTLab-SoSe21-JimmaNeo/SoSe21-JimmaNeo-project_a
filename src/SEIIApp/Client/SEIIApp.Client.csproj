@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Shared\ContentTypePreview.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.3" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
@@ -12,6 +16,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Shared\SEIIApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\ContentTypePreview.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Shared\ContentTypePreview.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Shared\ContentTypePreview.razor" />
   </ItemGroup>
 
 </Project>

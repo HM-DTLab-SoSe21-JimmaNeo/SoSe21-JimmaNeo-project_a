@@ -1,47 +1,24 @@
 ﻿@page "/"
 
-<h1>
-    Unit 1
+<h1 style="font-size: 4em; font-family: 'Ubuntu', sans-serif; font-weight:bold;">
+    Course overview
 </h1>
 <div class="row">
-    <div class="col-sm-10">
-
-        <div class="videoResponsive">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/INysoeXq7t4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+    <div class="col-sm-4">
+        <CoursePreview id="1"/>
     </div>
-    <div class="col-sm-2">
-        <h2> LOREM IPSUM</h2>
-        <br />
-        <span class="text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec purus turpis, feugiat in iaculis bibendum, laoreet eu odio. Duis ac mauris venenatis, aliquam nisl eu, rutrum neque. Vivamus maximus est vulputate tellus fermentum, sit amet consequat odio blandit. Vestibulum aliquam tincidunt tempus. Quisque nisl ante, efficitur vel enim sit amet, suscipit blandit nibh. Pellentesque tristique accumsan velit. Mauris eget diam et mauris rutrum vulputate fermentum facilisis massa. Nulla accumsan volutpat varius. In a sodales odio. Maecenas quis dui ultricies, venenatis eros in, sodales neque. Suspendisse quis augue commodo, tempor massa quis, malesuada eros. Vestibulum nec sapien augue. Nam vel urna auctor, bibendum felis eget, tincidunt turpis. Morbi congue enim sed purus posuere, rhoncus efficitur ex tincidunt.
-        </span>
-
+    <div class="col-sm-4">
+        <CoursePreview id="2"/>
+    </div>
+    <div class="col-sm-4">
+        <CoursePreview id="3"/>
+    </div>
+    </div>
+<div class="row">
+    <div class="col-sm-4">
+        <CoursePreview id="4"/>
+    </div>
+    <div class="col-sm-4">
+        <CoursePreview id="5"/>
     </div>
 </div>
-<span class="text">
-    Please watch the video and take the
-    <a class="font-weight-bold" href="/quiz">quiz</a>.
-</span>
-
-
-
-<style>
-    .videoResponsive {
-        padding-bottom: 56.25%;
-        height: 0;
-        position: relative;
-        padding-top: 30px;
-        overflow: hidden;
-    }
-
-        .videoResponsive iframe,
-        .videoResponsive object,
-        .videoResponsive embed {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        }
-</style>
