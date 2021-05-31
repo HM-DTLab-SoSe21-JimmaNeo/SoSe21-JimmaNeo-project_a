@@ -4,6 +4,9 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'SEIIApp' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
   <ItemGroup>
     <Content Remove="Shared\ContentTypePreview.razor" />
   </ItemGroup>
@@ -12,6 +15,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.3" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+    <PackageReference Include="bootstrap" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,4 +34,20 @@
     <None Include="Shared\ContentTypePreview.razor" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\..\..\..\..\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css" Condition="Exists('$(NuGetPackageRoot)bootstrap/5.0.1/contentFiles/any/any/wwwroot/css/bootstrap.min.css')">
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <NuGetPackageVersion>5.0.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Private>False</Private>
+      <Link>wwwroot\css\bootstrap\bootstrap.min.css</Link>
+    </Content>
+    <Content Include="..\..\..\..\..\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" Condition="Exists('$(NuGetPackageRoot)bootstrap/5.0.1/contentFiles/any/any/wwwroot/css/bootstrap.min.css.map')">
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <NuGetPackageVersion>5.0.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Private>False</Private>
+      <Link>wwwroot\css\bootstrap\bootstrap.min.css.map</Link>
+    </Content>
+  </ItemGroup>
 </Project>

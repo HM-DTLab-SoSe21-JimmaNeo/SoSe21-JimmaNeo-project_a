@@ -1,0 +1,63 @@
+﻿@page "/feedback"
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <h1 style="width:100% !important; padding-top:0.75%; padding-bottom:2%">Feedback: TITLE-PLACEHOLDER</h1>
+    </div>
+    <div class="col-sm-3">
+        <div>
+            <input type="radio" class="btn-check" name="options" id="option1" autocomplete="off">
+            <label class="btn btn-secondary" for="option1">Checked</label>
+                
+            <input type="radio" class="btn-check" name="options" id="option2" autocomplete="off">
+            <label class="btn btn-secondary" for="option2">Radio</label>
+          
+            <input type="radio" class="btn-check" name="options" id="option3" autocomplete="off">
+            <label class="btn btn-secondary" for="option3">Disabled</label>
+        </div>
+        <!-- <label for="flexRadioDefault1">Kategorie?</label>
+            <div class="form-check align-middle">
+                <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                    Uns fehlt die Ausstattung
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+                <label class="form-check-label" for="flexRadioDefault2">
+                    Bei uns wir es anders gemacht
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                <label class="form-check-label" for="flexRadioDefault3">
+                    der Kurs ist scheiße
+                </label>
+            </div>
+    -->
+    </div>
+
+    <div class="col-sm-9" style="width: 100%">
+        <div style="background-color:#dadada; border-color:papayawhip; padding-bottom:0.75%;">
+            <div style="padding:20px;">
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Beschreibe dein Problem</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="20"></textarea>
+                </div>
+                <label for="inputGroupFile02">Datei hinzuf&uuml;gen?</label>
+                <div class="input-group mb-3">
+
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupiFle02">Upload</label>
+                </div>
+            </div>
+        </div>
+        <div style="font-size:20px">&nbsp;</div>
+        <button style="float:right;" type="button" class="btn btn-outline-danger btn-lg">Senden</button>
+    </div>
+
+</div>
+@code {
+
+}
