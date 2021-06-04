@@ -1,24 +1,62 @@
 ﻿@page "/"
+@using SEIIApp.Shared
 
-<h1 style="font-size: 4em; font-family: 'Ubuntu', sans-serif; font-weight:bold;">
-    Course overview
-</h1>
+
+@for (var i = 0; i < courses.Length; i+=3)
+{
 <div class="row">
-    <div class="col-sm-4">
-        <CoursePreview id="1" />
-    </div>
-    <div class="col-sm-4">
-        <CoursePreview id="2" />
-    </div>
-    <div class="col-sm-4">
-        <CoursePreview id="3" />
-    </div>
+    @for (var j = i; j < i + 3 && j < courses.Length; j++)
+    {
+        <div class="col-sm-4">
+            <CoursePreview Name="@courses[j].Name" Desc="@courses[j].Desc" Img="@courses[j].Img" Video="@courses[j].Video" Pdf="@courses[j].Pdf" Quiz="@courses[j].Quiz" progress="@courses[j].Progress" />
+        </div>
+    }
 </div>
-<div class="row">
-    <div class="col-sm-4">
-        <CoursePreview id="4" />
-    </div>
-    <div class="col-sm-4">
-        <CoursePreview id="5" />
-    </div>
-</div>
+}
+
+
+
+@code { private Course[] courses =  {
+                                               new Course
+                                                {
+                                                    Name = "Lorem ipsum",
+                                                    Desc = "Ipsam omnis vel officiis voluptatem ut repellendus. Dolores maiores sapiente molestiae exercitationem ad qui ut officiis. Voluptatem est aliquam saepe deserunt. Debitis et quam laboriosam omnis consequatur earum rem explicabo.",
+                                                    Progress = 100,
+                                                    Img = "https://goafricahealth.com/wp-content/uploads/2017/10/34689294_l.jpg",
+                                                    Video = true,
+                                                    Quiz = true
+                                               }, new Course
+                                                {
+                                                    Name = "Officiis dolor distinctio",
+                                                    Desc = "Quasi eum aliquid dignissimos vel vitae. Cupiditate quaerat id consectetur dolores id. Officiis dolor distinctio qui ipsam nesciunt aut. Ea minus voluptatem optio pariatur explicabo. Quibusdam error molestias reprehenderit distinctio. Qui sed excepturi ullam dolorem ut omnis.",
+                                                    Progress = 100,
+                                                    Img = "https://qtxasset.com/fiercehealthcare/1562973884/GettyImages-898906336.jpg/GettyImages-898906336.jpg?OhHp8.hb4iZbXQ.xHf4.JzCZpWlc56My",
+                                                    Pdf = true
+                                                }, new Course
+                                                {
+                                                    Name = "Laudantium officiis",
+                                                    Desc = "Laudantium officiis ipsum sapiente. Velit necessitatibus in a et non quasi vel. Assumenda nihil ipsa deserunt corrupti animi est. Quia nisi numquam illum qui eum minima aperiam. Aut provident laudantium fuga. Beatae in commodi labore et.",
+                                                    Img = "https://adwonline.ae/wp-content/uploads/2020/05/Reem-Hospital-1024x683.jpg",
+                                                    Progress = 75,
+                                                    Video = true,
+                                                    Quiz = true,
+                                                    Pdf = true
+                                                }, new Course
+                                                {
+                                                    Name = "Cupiditate",
+                                                    Desc = "Ea impedit sapiente ullam tempore sit qui deleniti. Cupiditate in sequi eius tempora nesciunt nam. Laboriosam debitis sunt debitis illum.",
+                                                    Img = "https://www.clipartkey.com/mpngs/m/126-1268626_black-baby-png-happy-african-babies.png",
+                                                    Progress = 50,
+                                                    Video = true,
+                                                    Quiz = true,
+                                                    Pdf = true
+
+                                                }, new Course
+                                                {
+                                                    Name = "Voluptas placeat",
+                                                    Desc = "Quod qui explicabo molestias a et alias voluptatum. Voluptas placeat nisi quo nihil et vitae vero eius. Repellat voluptatem perspiciatis cupiditate dolore nobis et. Voluptatem in inventore ducimus iusto. Nihil porro magni quos minima quasi voluptatem.",
+                                                    Progress = 0,
+                                                    Img = "https://static.vecteezy.com/system/resources/previews/000/458/152/original/vector-abstract-3d-success-design.jpg",
+                                                    Pdf = true
+                                                }
+                                            }; }
