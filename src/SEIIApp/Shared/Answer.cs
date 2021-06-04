@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace SEIIApp.Shared
 {
@@ -12,6 +7,16 @@ namespace SEIIApp.Shared
         [Required]
         public string Text { get; set; }
 
-        public bool Selected { get; set; }
+        public bool isSelected { get; set; }
+
+        [Required]
+        public bool isCorrect { get; set; }
+
+        public bool checkAnswert()
+        {
+            return isSelected && isCorrect;
+        }
+
+        public string color = "light";
     }
 }

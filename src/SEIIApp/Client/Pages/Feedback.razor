@@ -1,9 +1,8 @@
 ﻿@page "/feedback"
 
-
-<div class="row">
+<div class="row justify-content-md-center">
     <div class="col-sm-12">
-        <h1 style="width:100% !important; padding-top:0.75%; padding-bottom:2%">Feedback: Kurs X</h1>
+        <h1 style="font-size: 2.5em; font-family: 'Ubuntu', sans-serif; font-weight:lighter; padding-top:0.75%; padding-bottom:2%">Feedback: Kurs X</h1>
     </div>
     <div class="col-sm-3">
 
@@ -27,22 +26,16 @@
             </label>
         </div>
         <div class="form-check">
-            <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+            <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
             <label class="form-check-label" for="flexRadioDefault4">
                 Die Lerninhalte wurden zu schnell präsentiert
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-            <label class="form-check-label" for="flexRadioDefault5">
-                Die Lerninhalte wurden unnötig langsam präsentiert
             </label>
         </div>
 
     </div>
 
     <div class="col-sm-9" style="width: 100%">
-        <div style="background-color:#dadada; border-color:papayawhip; padding-bottom:0.75%;">
+        <div class="jumbotron border bg-light-grey" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem">
             <div style="padding:20px;">
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Beschreibe dein Problem</label>
@@ -60,7 +53,9 @@
         <button style="float:right;" type="button" class="btn btn-outline-danger btn-lg">Senden</button>
     </div>
 
+
 </div>
+
 @code {
 
 }
