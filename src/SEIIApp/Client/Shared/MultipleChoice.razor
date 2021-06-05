@@ -15,13 +15,13 @@
             <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
         </div>
     }
-    else
+    else if (!QuizCompleted)
     {
         <h3>
             QUIZ ABSCHLIESSEN?
         </h3>
         <div style="font-size: 12px">&nbsp;</div>
-        <button class="btn btn-danger btn-lg" @onclick="checkAnswers">JA (KANN NICHT RÜCKGÄNGIG GEMACHT WERDEN)</button>
+        <button class="btn btn-danger btn-lg" @onclick="finish">JA (KANN NICHT RÜCKGÄNGIG GEMACHT WERDEN)</button>
         <div style="font-size: 12px">&nbsp;</div>
         <button class="btn btn-dark btn-lg" @onclick="previousPage">NEIN (bring mich zurück!)</button>
         <div style="font-size: 12px">&nbsp;</div>
@@ -31,11 +31,18 @@
             <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
         </div>
     }
+    else
+    {
+
+        <QuizResult Questions="@Questions" />
+    }
 
 </div>
 @code {
     [Parameter]
     public QuestionDto[] Questions { get; set; }
+
+    public bool QuizCompleted = false;
 
     public int Page = 0;
     public int Progress = 0;
@@ -62,9 +69,9 @@
         Progress = (int)result;
     }
 
-    private void checkAnswers()
+    private void finish()
     {
-
+        QuizCompleted = true;
     }
 
     protected override void OnInitialized()

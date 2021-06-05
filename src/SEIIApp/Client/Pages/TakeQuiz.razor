@@ -3,26 +3,26 @@
 
 <h3>Quiz: @if (Quiz != null) @Quiz.Name </h3>
 <br />
-
-<center>
+<div class="content mx-auto" style="min-width: 310px; width:90%; max-width: 810px;  margin: 0; padding: 0.1rem">
 
     @if (Quiz == null)
     {
-    <div class="spinner-border" role="status">
-        <span class="sr-only">Loading...</span>
-    </div>
+        <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
     }
     else
     {
-        <MultipleChoice Questions=@Quiz.Questions />
+            <MultipleChoice Questions=@Quiz.Questions  />
     }
 
-</center>
+</div>
 
 
 @code {
 
     int id = 1;
+
 
     public QuizDto Quiz;
 

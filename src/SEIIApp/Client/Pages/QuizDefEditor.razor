@@ -3,6 +3,7 @@
 @using SEIIApp.Shared
 @using SEIIApp.Client.Components
 
+@inject NavigationManager NavManager
 @inject Services.QuizBackendAccessService QuizService
 
 <h3>Quiz Definitions Editor</h3>
@@ -15,7 +16,8 @@
     <label>Quiz Name</label>
     <InputText @bind-Value="QuizDto.Name" />
 
-    @foreach (var question in QuizDto.Questions) {
+    @foreach (var question in QuizDto.Questions)
+    {
         <div class="card">
             <div class="card-body">
                 <!-- Component for questions in quiz -->
@@ -29,6 +31,7 @@
 
     <button class="btn btn-light btn-sm" @onclick="AddQuestion">Add Question</button>
     <button class="btn btn-light" @onclick="SaveQuizToBackend">Save Complete Quiz</button>
+
 </EditForm>
 
     }
@@ -37,6 +40,7 @@ else {
 }
 
 @code { 
+
 
     [Parameter]
     public int QuizId { get; set; }
@@ -85,6 +89,7 @@ else {
             if (answer != null) {
                 this.QuizDto.Id = answer.Id; //refresh id (if created)
             }
+            NavManager.NavigateTo("/quizdef");
         }
     }
 

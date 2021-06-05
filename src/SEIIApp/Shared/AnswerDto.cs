@@ -14,7 +14,8 @@ namespace SEIIApp.Shared
 
         public bool CheckAnswer()
         {
-            return IsSelected && IsCorrect;
+          
+           return (!IsSelected && !IsCorrect) || (IsSelected && IsCorrect);
         }
 
         public string Color = "light";
