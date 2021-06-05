@@ -1,0 +1,74 @@
+﻿<div class="jumbotron border bg-light-grey" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); min-width:90% !important; padding-bottom:10px; text-align: left;">
+    @if (Page < Questions.Length)
+    {
+        <h3>@Questions[Page].QuestionText</h3>
+
+        @foreach (var Answer in Questions[Page].Answers)
+        {
+            <AnswerButton Answer="@Answer"></AnswerButton>
+        }
+        <div style="font-size: 12px">&nbsp;</div>
+        <button class="btn btn-light btn-outline-dark btn-lg" @onclick="previousPage" disabled=@backDisabled>←</button>
+        <button class="btn btn-light btn-outline-dark btn-lg float-right" @onclick="nextPage">→</button><br />
+        <small>@(Page+1) / @Questions.Length</small>
+        <div class="progress" style="background-color: #a94c4c !important;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
+        </div>
+    }
+    else
+    {
+        <h3>
+            QUIZ ABSCHLIESSEN?
+        </h3>
+        <div style="font-size: 12px">&nbsp;</div>
+        <button class="btn btn-danger btn-lg" @onclick="checkAnswers">JA (KANN NICHT RÜCKGÄNGIG GEMACHT WERDEN)</button>
+        <div style="font-size: 12px">&nbsp;</div>
+        <button class="btn btn-dark btn-lg" @onclick="previousPage">NEIN (bring mich zurück!)</button>
+        <div style="font-size: 12px">&nbsp;</div>
+        <small>@(Page) / @Questions.Length</small>
+        <div style="font-size: 12px">&nbsp;</div>
+        <div class="progress" style="background-color: #a94c4c !important;">
+            <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
+        </div>
+    }
+
+</div>
+@code {
+    [Parameter]
+    public QuestionDto[] Questions { get; set; }
+
+    public int Page = 0;
+    public int Progress = 0;
+
+    public bool backDisabled = true;
+
+    private void previousPage()
+    {
+
+        if (--Page == 0) backDisabled = true;
+        updateProgress();
+
+    }
+
+    private void nextPage()
+    {
+        if (++Page == 1) backDisabled = false;
+        updateProgress();
+    }
+
+    private void updateProgress()
+    {
+        double result = ((double)Page / (double)Questions.Length) * 100.0;
+        Progress = (int)result;
+    }
+
+    private void checkAnswers()
+    {
+
+    }
+
+    protected override void OnInitialized()
+    {
+        updateProgress();
+    }
+}

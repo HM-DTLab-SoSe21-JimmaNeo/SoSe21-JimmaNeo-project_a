@@ -1,0 +1,55 @@
+﻿@using SEIIApp.Shared
+
+<h3>Question</h3>
+@{ 
+    if (QuestionDto != null) {
+    <EditForm Model="QuestionDto">
+        <DataAnnotationsValidator/>
+
+        <label>Question Text</label>
+        <InputText @bind-Value="QuestionDto.QuestionText" />
+        <ValidationSummary />
+
+        @foreach (var a in QuestionDto.Answers) {
+            <AnswerDefComponent AnswerDto="a"></AnswerDefComponent>
+            <button class="btn btn-light btn-sm" @onclick="() => RemoveAnswer(a)">Remove Answer</button>
+        }
+
+        <button class="btn btn-light btn-sm" @onclick="AddAnswer">Add Answer</button>
+
+    </EditForm>
+    }
+    else {
+            <label>Loading Question Definition ...</label>
+        }
+    }
+
+@code {
+
+    [Parameter]
+    public QuestionDto QuestionDto { get; set; }
+
+    protected override void OnParametersSet() {
+        base.OnParametersSet();
+
+        InitiQuestionDefintionDto();
+    }
+
+    private void InitiQuestionDefintionDto() {
+        if (QuestionDto.Answers == null)
+            QuestionDto.Answers = Array.Empty<AnswerDto>();
+
+    }
+
+    private void AddAnswer() {
+        QuestionDto.Answers = QuestionDto.Answers.Concat(new AnswerDto[] {
+            new AnswerDto()
+        }).ToArray();
+    }
+
+    private void RemoveAnswer(AnswerDto answer) {
+        QuestionDto.Answers = QuestionDto.Answers.Where(a => a != answer).ToArray();
+    }
+
+
+}

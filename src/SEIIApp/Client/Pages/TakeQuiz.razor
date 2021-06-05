@@ -1,0 +1,86 @@
+﻿@page "/quiz"
+@inject Services.QuizBackendAccessService QuizService
+
+<h3>Quiz: @if (Quiz != null) @Quiz.Name </h3>
+<br />
+
+<center>
+
+    @if (Quiz == null)
+    {
+    <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    }
+    else
+    {
+        <MultipleChoice Questions=@Quiz.Questions />
+    }
+
+</center>
+
+
+@code {
+
+    int id = 1;
+
+    public QuizDto Quiz;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+        Quiz = await QuizService.GetQuizById(id);
+    }
+
+    /**
+    private QuestionDto[] Questions =
+    {
+        new QuestionDto
+        {
+            Description = "Welche Aussagen zur Erstversorgung Neugeborener treffen zu?",
+            Answers = new AnswerDto[]
+    {
+                new AnswerDto
+                {
+                    Text = "Der Wärmeerhalt (36,5 -37,5 °C) nach Geburt ist für alle gesunden Neugeborenen von großer Wichtigkeit.",
+                    IsCorrect = true
+            },
+new AnswerDto
+                {
+                    Text = "Nur ca. 30% aller Neugeborenen müssen nach Geburt beatmet werden.",
+                    IsCorrect = false
+
+                },
+new AnswerDto
+{
+                    Text = "Ca. 10% aller Neugeborenen müssen nach Geburt intubiert werden.",
+                    IsCorrect = false
+
+},
+new AnswerDto
+{
+                    Text = "Die medikamentöse Therapie spielt eine größere Rolle als die Herz-Druck-Massage.",
+                    IsCorrect = true
+
+}
+
+            }
+        },
+        new QuestionDto  {
+            Description = "BLABLABLABLA",
+            Answers = new AnswerDto[]
+    {
+                new AnswerDto
+                {
+                    Text = "A",
+                    IsCorrect = true
+            },
+             new AnswerDto
+                {
+                    Text = "B",
+                    IsCorrect = false
+            }
+        }
+    } };
+    **/
+}

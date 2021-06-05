@@ -1,0 +1,31 @@
+﻿@using SEIIApp.Shared
+
+<div style="font-size: 5px;">&nbsp;</div>
+    <button type="button" class="btn btn-@Answer.Color btn-lg btn-block font-" @onmouseout="mouseOut" @onmouseover="mouseIn" @onmousedown="clicked" style="text-align: left;">@Answer.AnswerText</button>
+<div style="font-size: 5px;">&nbsp;</div>
+
+@code {
+    [Parameter]
+    public AnswerDto Answer { get; set; }
+
+
+
+
+
+    private void mouseOut()
+    {
+        Answer.Color = Answer.IsSelected? "info" : "light";
+    }
+
+    private void mouseIn()
+    {
+        Answer.Color = "dark";
+    }
+
+    private void clicked()
+    {
+        Answer.IsSelected = Answer.IsSelected ? false : true;
+        mouseOut();
+    }
+
+}

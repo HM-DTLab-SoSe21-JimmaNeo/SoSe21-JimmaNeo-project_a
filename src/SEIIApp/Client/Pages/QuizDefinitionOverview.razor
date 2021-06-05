@@ -1,0 +1,41 @@
+﻿@page "/quizdef"
+
+@using SEIIApp.Shared
+
+@inject Services.QuizBackendAccessService QuizService
+@inject NavigationManager NavigationManager
+
+<h3>Quiz Definitions Overview</h3>
+
+@{ if (Quizzes?.Length > 0) {
+        <ol>
+            @foreach (var quiz in Quizzes) {
+                <li>@(quiz.Name) <button class="btn btn-primary" @onclick="() => EditQuiz(quiz)">Edit</button></li>
+            }
+        </ol>
+
+        <button @onclick="AddQuiz">Add Quiz</button>
+    }
+    else {
+        <h5>Loading ...  or no quizzes found.</h5>
+    }
+}
+
+
+@code {
+
+    public QuizDto[] Quizzes { get; set; }
+
+    protected override async Task OnParametersSetAsync() {
+        await base.OnParametersSetAsync();
+        Quizzes = await QuizService.GetQuizOverview();
+    }
+
+    private void EditQuiz(QuizDto quiz) {
+        NavigationManager.NavigateTo("/quizdefedit/" + quiz.Id);
+    }
+
+    private void AddQuiz() {
+        NavigationManager.NavigateTo("/quizdefedit/0");
+    }
+}
