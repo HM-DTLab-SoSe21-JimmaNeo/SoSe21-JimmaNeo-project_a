@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
@@ -44,6 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-preview2.20160.5" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.3" PrivateAssets="all" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
@@ -63,7 +64,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Components\AnswerDefComponent.razor" />
+    <None Include="Components\QuestionDefComponent.razor" />
     <None Include="Shared\ContentTypePreview.razor" />
+    <None Include="wwwroot\Newsletter\images\.DS_Store" />
+    <None Include="wwwroot\Newsletter\images\baby.png" />
+    <None Include="wwwroot\Newsletter\images\logo.png" />
+    <None Include="wwwroot\Newsletter\images\teaser.jpg" />
   </ItemGroup>
 
   <ItemGroup>
