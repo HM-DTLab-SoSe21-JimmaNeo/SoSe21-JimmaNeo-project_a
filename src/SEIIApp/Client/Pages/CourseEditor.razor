@@ -6,12 +6,15 @@
 @inject NavigationManager NavManager
 @inject Services.CourseBackendAccessService CourseService
 
-@if(CourseDto != null) {
+@if (CourseDto != null)
+{
 
 <h3>Course Editor</h3>
-    <CourseDefComponent Course="CourseDto"/>
+    <CourseDefComponent Course="CourseDto" />
+    <button class="btn" @onclick="SaveCourseToBackend"><img src="icons/save_black_24dp.svg" /></button>
 }
-else {
+else
+{
 <h5>Course in loading (or not found) ...</h5>
 }
 
@@ -23,8 +26,6 @@ else {
 
     public CourseDto CourseDto { get; set; }
 
-    private EditContext context { get; set; }
-
 
     protected override async Task OnParametersSetAsync() {
         if (CourseId != 0) {
@@ -35,21 +36,22 @@ else {
             PrepareEditOrAddOfCourse(new CourseDto());
         }
         await base.OnParametersSetAsync();
-
-        context = new EditContext(CourseDto);
     }
 
     private void PrepareEditOrAddOfCourse(CourseDto q) {
         this.CourseDto = q;
     }
 
+    private void OnSubmit()
+        {
+
+        }
 
     private async void SaveCourseToBackend() {
-        var isValid = context.Validate();
-        if (isValid) {
-            var answer = await CourseService.AddOrUpdateCourse(CourseDto);
-            NavManager.NavigateTo("/courseeditor");
-        }
+        
+        var answer = await CourseService.AddOrUpdateCourse(CourseDto);
+        NavManager.NavigateTo("/courseeditor");
+
     }
 
 }

@@ -49,14 +49,6 @@ namespace SEIIApp.Server.DataAccess {
                                                     PdfURL = "example files/Pdf Datei.pdf"
                                                 }, new Course
                                                 {
-                                                    Name = "Laudantium officiis",
-                                                    Desc = "Laudantium officiis ipsum sapiente. Velit necessitatibus in a et non quasi vel. Assumenda nihil ipsa deserunt corrupti animi est. Quia nisi numquam illum qui eum minima aperiam. Aut provident laudantium fuga. Beatae in commodi labore et.",
-                                               
-                                                    Progress = 75,
-                                                    VideoURL = "C9udNPYVKr8",
-                                                    PdfURL = ""
-                                                }, new Course
-                                                {
                                                     Name = "Cupiditate",
                                                     Desc = "Ea impedit sapiente ullam tempore sit qui deleniti. Cupiditate in sequi eius tempora nesciunt nam. Laboriosam debitis sunt debitis illum.",
                                                     Img = "https://www.clipartkey.com/mpngs/m/126-1268626_black-baby-png-happy-african-babies.png",

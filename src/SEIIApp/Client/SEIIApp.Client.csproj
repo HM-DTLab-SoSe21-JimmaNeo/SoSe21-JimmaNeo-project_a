@@ -42,6 +42,9 @@
     <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css.map" />
     <Content Remove="Shared\ContentTypePreview.razor" />
   </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\CoursePage.razor.css" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-preview2.20160.5" />
@@ -88,5 +91,6 @@
       <Private>False</Private>
       <Link>wwwroot\css\bootstrap\bootstrap.min.css.map</Link>
     </Content>
+    <Content Include="Pages\CoursePage.razor.css" />
   </ItemGroup>
 </Project>

@@ -4,6 +4,7 @@
 
 @inject Services.CourseBackendAccessService CourseService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
 
 <h3>Courses Overview</h3>
 
@@ -12,7 +13,11 @@
         <ol>
             @foreach (var course in Courses)
             {
-                <li>@(course.Name) <button class="btn btn-primary" @onclick="() => EditCourse(course)">Edit</button></li>
+                <li>
+                    @(course.Name)
+                    <button class="btn btn-primary" @onclick="() => EditCourse(course)">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteCourse(course)">Delete</button>
+                </li>
             }
         </ol>
 
@@ -29,6 +34,7 @@
 
     public CourseDto[] Courses { get; set; }
 
+
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
@@ -43,5 +49,17 @@
     private void AddCourse()
     {
         NavigationManager.NavigateTo("/courseeditor/0");
+    }
+
+    async Task DeleteCourse(CourseDto course)
+    {
+
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+        if (confirmed)
+        {
+            await CourseService.DeleteCourse(course.Id);
+            StateHasChanged();
+        }
+
     }
 }

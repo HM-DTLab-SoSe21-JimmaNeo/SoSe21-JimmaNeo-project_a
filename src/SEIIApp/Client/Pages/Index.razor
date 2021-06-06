@@ -14,7 +14,7 @@
                 @for (var j = i; j < i + 3 && j < Courses.Length; j++)
                 {
                     <div class="col-sm-4">
-                        <CoursePreview Name="@Courses[j].Name" Desc="@Courses[j].Desc" Img="@Courses[j].Img" Video="@Courses[j].VideoURL" Pdf="@Courses[j].PdfURL" Quiz="@Courses[j].QuizId" progress="@Courses[j].Progress" />
+                        <CoursePreview Id="@Courses[j].Id" Name="@Courses[j].Name" Desc="@Courses[j].Desc" Img="@Courses[j].Img" Video="@Courses[j].VideoURL" Pdf="@Courses[j].PdfURL" Quiz="@Courses[j].QuizId" progress="@Courses[j].Progress" />
                     </div>
                 }
             </div>
