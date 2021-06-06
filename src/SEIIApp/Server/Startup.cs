@@ -41,10 +41,11 @@ namespace SEIIApp.Server {
             services.AddAutoMapper(typeof(Domain.DomainMapper));
 
             services.AddScoped<Services.QuizService>();
+            services.AddScoped<Services.CourseService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Services.QuizService quizService)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, Services.QuizService quizService, Services.CourseService courseService)
         {
             if (env.IsDevelopment())
             {
@@ -85,7 +86,8 @@ namespace SEIIApp.Server {
 #if DEBUG
             //*******************************************************************
             //*** Initialisierung von Test-Daten, nur bei In-Memory-DB **********
-            TestDataInitializer.InitializeTestData(quizService);
+            TestDataInitializer.InitializeQuizTestData(quizService);
+            TestDataInitializer.InitializeCourseTestData(courseService);
 #endif
 
         }

@@ -1,0 +1,47 @@
+﻿@page "/courseeditor"
+
+@using SEIIApp.Shared
+
+@inject Services.CourseBackendAccessService CourseService
+@inject NavigationManager NavigationManager
+
+<h3>Courses Overview</h3>
+
+@{ if (Courses?.Length > 0)
+    {
+        <ol>
+            @foreach (var course in Courses)
+            {
+                <li>@(course.Name) <button class="btn btn-primary" @onclick="() => EditCourse(course)">Edit</button></li>
+            }
+        </ol>
+
+        <button @onclick="AddCourse">Add Course</button>
+    }
+    else
+    {
+        <h5>Loading ...  or no courses found.</h5>
+    }
+}
+
+
+@code {
+
+    public CourseDto[] Courses { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+        Courses = await CourseService.GetCourseOverview();
+    }
+
+    private void EditCourse(CourseDto course)
+    {
+        NavigationManager.NavigateTo("/courseeditor/" + course.Id);
+    }
+
+    private void AddCourse()
+    {
+        NavigationManager.NavigateTo("/courseeditor/0");
+    }
+}

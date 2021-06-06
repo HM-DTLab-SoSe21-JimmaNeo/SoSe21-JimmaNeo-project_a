@@ -1,0 +1,55 @@
+﻿@page "/courseeditor/{CourseId:int}"
+
+@using SEIIApp.Shared
+@using SEIIApp.Client.Components
+
+@inject NavigationManager NavManager
+@inject Services.CourseBackendAccessService CourseService
+
+@if(CourseDto != null) {
+
+<h3>Course Editor</h3>
+    <CourseDefComponent Course="CourseDto"/>
+}
+else {
+<h5>Course in loading (or not found) ...</h5>
+}
+
+@code {
+
+
+    [Parameter]
+    public int CourseId { get; set; }
+
+    public CourseDto CourseDto { get; set; }
+
+    private EditContext context { get; set; }
+
+
+    protected override async Task OnParametersSetAsync() {
+        if (CourseId != 0) {
+            var existingCourse = await CourseService.GetCourseById(CourseId);
+            PrepareEditOrAddOfCourse(existingCourse);
+        }
+        else {
+            PrepareEditOrAddOfCourse(new CourseDto());
+        }
+        await base.OnParametersSetAsync();
+
+        context = new EditContext(CourseDto);
+    }
+
+    private void PrepareEditOrAddOfCourse(CourseDto q) {
+        this.CourseDto = q;
+    }
+
+
+    private async void SaveCourseToBackend() {
+        var isValid = context.Validate();
+        if (isValid) {
+            var answer = await CourseService.AddOrUpdateCourse(CourseDto);
+            NavManager.NavigateTo("/courseeditor");
+        }
+    }
+
+}

@@ -5,37 +5,53 @@
 @inject Services.QuizBackendAccessService QuizService
 @inject NavigationManager NavigationManager
 
-<h3>Quiz Definitions Overview</h3>
+<h3>Quiz Editor</h3>
+<center>
+    @if (Quizzes?.Length > 0)
+        {
 
-@{ if (Quizzes?.Length > 0) {
-        <ol>
-            @foreach (var quiz in Quizzes) {
-                <li>@(quiz.Name) <button class="btn btn-primary" @onclick="() => EditQuiz(quiz)">Edit</button></li>
-            }
-        </ol>
+            <div class="jumbotron border" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; max-width:500px">
 
-        <button @onclick="AddQuiz">Add Quiz</button>
+                
+                <ol>
+                    @foreach (var quiz in Quizzes)
+                    {
+                        <li>
+                            <button class="btn btn-primary" @onclick="() => EditQuiz(quiz)">
+                                @(quiz.Name)
+                            </button>
+                        </li>
+                    }
+                </ol>
+
+                <button @onclick="AddQuiz">Add Quiz</button>
+            </div>
+
     }
-    else {
-        <h5>Loading ...  or no quizzes found.</h5>
+    else
+    {
+    <h5>Loading ...  or no quizzes found.</h5>
     }
-}
+</center>
 
 
 @code {
 
     public QuizDto[] Quizzes { get; set; }
 
-    protected override async Task OnParametersSetAsync() {
+    protected override async Task OnParametersSetAsync()
+    {
         await base.OnParametersSetAsync();
         Quizzes = await QuizService.GetQuizOverview();
     }
 
-    private void EditQuiz(QuizDto quiz) {
+    private void EditQuiz(QuizDto quiz)
+    {
         NavigationManager.NavigateTo("/quizdefedit/" + quiz.Id);
     }
 
-    private void AddQuiz() {
+    private void AddQuiz()
+    {
         NavigationManager.NavigateTo("/quizdefedit/0");
     }
 }

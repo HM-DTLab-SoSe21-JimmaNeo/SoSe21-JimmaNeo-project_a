@@ -34,6 +34,12 @@ namespace SEIIApp.Server.DataAccess
         //QuestionDefinitions and AnswerDefinitions an.
         //Diese Abhängigkeiten zu Quiz werden automatisch erkannt.
 
+        //Hier legen wir eine Tabellen für die Quizze an.
+        public DbSet<Domain.Course> Courses { get; set; }
+        //Wir legen, obwohl wir könnten, keine Tabellen für 
+        //QuestionDefinitions and AnswerDefinitions an.
+        //Diese Abhängigkeiten zu Quiz werden automatisch erkannt.
+
 
 
     }

@@ -1,7 +1,11 @@
-﻿@page "/quiz"
+﻿@page "/quiz/{Id:int}"
+
+@using System.Text.RegularExpressions;
+
+@inject NavigationManager NavManager
 @inject Services.QuizBackendAccessService QuizService
 
-<h3>Quiz: @if (Quiz != null) @Quiz.Name </h3>
+<h3>Quiz: @if (Quiz != null)@Quiz.Name </h3>
 <br />
 <div class="content mx-auto" style="min-width: 310px; width:90%; max-width: 810px;  margin: 0; padding: 0.1rem">
 
@@ -13,7 +17,7 @@
     }
     else
     {
-            <MultipleChoice Questions=@Quiz.Questions  />
+        <MultipleChoice Questions=@Quiz.Questions />
     }
 
 </div>
@@ -21,7 +25,9 @@
 
 @code {
 
-    int id = 1;
+    [Parameter]
+    public int Id { get; set; }
+
 
 
     public QuizDto Quiz;
@@ -29,7 +35,15 @@
     protected override async Task OnParametersSetAsync()
     {
         await base.OnParametersSetAsync();
-        Quiz = await QuizService.GetQuizById(id);
+        try
+        {
+
+            Quiz = await QuizService.GetQuizById(Id);
+        }
+        catch
+        {
+            NavManager.NavigateTo("/quiz");
+        }
     }
 
     /**

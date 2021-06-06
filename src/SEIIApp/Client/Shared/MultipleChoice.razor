@@ -11,9 +11,6 @@
         <button class="btn btn-light btn-outline-dark btn-lg" @onclick="previousPage" disabled=@backDisabled>←</button>
         <button class="btn btn-light btn-outline-dark btn-lg float-right" @onclick="nextPage">→</button><br />
         <small>@(Page+1) / @Questions.Length</small>
-        <div class="progress" style="background-color: #a94c4c !important;">
-            <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
-        </div>
     }
     else if (!QuizCompleted)
     {
@@ -27,14 +24,18 @@
         <div style="font-size: 12px">&nbsp;</div>
         <small>@(Page) / @Questions.Length</small>
         <div style="font-size: 12px">&nbsp;</div>
-        <div class="progress" style="background-color: #a94c4c !important;">
-            <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
-        </div>
+
     }
     else
     {
-
-        <QuizResult Questions="@Questions" />
+<center>
+    <QuizResult Questions="@Questions" />
+</center>
+    }
+    @if(!QuizCompleted) {
+        <div class="progress" style="background-color: #a94c4c !important;">
+        <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
+    </div>
     }
 
 </div>

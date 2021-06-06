@@ -1,9 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SEIIApp.Shared
+namespace SEIIApp.Server.Domain
 {
-    public class CourseDto
+    public class Course
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -16,6 +17,7 @@ namespace SEIIApp.Shared
 
         public string Img { get; set; }
 
+    
 
         public string VideoURL { get; set; }
         public string PdfURL { get; set; }

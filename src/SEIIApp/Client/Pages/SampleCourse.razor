@@ -1,14 +1,16 @@
 ﻿@page "/course"
 
 <h1>
-    Unit 1
+    Unit @Id
 </h1>
 <div class="row">
     <div class="col-sm-10">
 
         <div class="videoResponsive">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/C9udNPYVKr8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>      </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/C9udNPYVKr8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
+
     <div class="col-sm-2">
         <h2> LOREM IPSUM</h2>
         <br />
@@ -20,7 +22,14 @@
 </div>
 <span class="text">
     Please watch the video and take the
-    <a class="font-weight-bold" href="/quiz">quiz</a>.
+    <a class="font-weight-bold" href="/quiz/1">quiz</a>.
 </span>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="btn-primary btn-lg" href="/examplle files/PDF Datei.pdf">PDF</a>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<a class="btn-primary btn-lg" href="/feedback">FEEDBACK</a>
 
-<a class="btn-primary" href="/feedback">FEEDBACK</a>
+@code {
+    [Parameter]
+    public int Id { get; set; }
+}

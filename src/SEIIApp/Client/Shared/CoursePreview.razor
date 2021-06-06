@@ -3,15 +3,15 @@
 <div class="jumbotron border bg-@b" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem" @onmouseout="mouseOut" @onmouseover="mouseIn" @onmousedown="clicked">
     <h2>
         @Name
-        @if (Quiz)
+        @if (Quiz != null && Quiz != "")
         {
             <img src="icons/pencil-square.svg" style="float: right; padding-left: 8px;">
         }
-        @if (Pdf)
+        @if (Pdf != null && Pdf != "")
         {
             <img src="icons/file-pdf.svg" style="float: right; padding-left: 8px;">
         }
-        @if (Video)
+        @if (Video != null && Video != "")
         {
             <img src="icons/file-play.svg" style="float: right; padding-left: 8px;">
         }
@@ -42,11 +42,11 @@
     [Parameter]
     public string Img { get; set; }
     [Parameter]
-    public bool Video { get; set; }
+    public string Video { get; set; }
     [Parameter]
-    public bool Pdf { get; set; }
+    public string Pdf { get; set; }
     [Parameter]
-    public bool Quiz { get; set; }
+    public string Quiz { get; set; }
     [Parameter]
     public int progress { get; set; }
 
@@ -76,6 +76,14 @@
     private void clicked()
     {
         NavigationManager.NavigateTo("/Course");
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (Img == null || Img == "")
+        {
+            Img = "http://www.clker.com/cliparts/q/L/P/Y/t/6/no-image-available-hi.png";
+        }
     }
 }
 

@@ -26,6 +26,9 @@ namespace SEIIApp.Server.Domain {
             CreateMap<Answer, AnswerDto>();
             CreateMap<AnswerDto, Answer>();
 
+            CreateMap<Course, CourseDto>();
+            CreateMap<CourseDto, Course>();
+
         }
 
     }

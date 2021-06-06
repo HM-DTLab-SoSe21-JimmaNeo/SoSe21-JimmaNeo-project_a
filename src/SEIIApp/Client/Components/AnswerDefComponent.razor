@@ -1,27 +1,41 @@
 ﻿@using SEIIApp.Shared
 
-<h5>Answer Definition</h5>
 
-<EditForm Model="AnswerDto">
-    <DataAnnotationsValidator />
+<DataAnnotationsValidator />
 
-    <InputText @bind-Value="AnswerDto.AnswerText" />
+<InputText placeholder="Antwort eingeben" @bind-Value="AnswerDto.AnswerText" />
 
-    <label>Is correct answer?</label>
-    <InputCheckbox @bind-Value="AnswerDto.IsCorrect"></InputCheckbox>
+<button type="button" class="btn btn-@Color" @onmouseout="mouseOut" @onmouseover="mouseIn" @onmousedown="clicked" style="text-align: left;">@Text</button>
 
-    <ValidationSummary />
-</EditForm>
+<ValidationSummary />
+@code {
 
-    @code {
+    [Parameter]
+    public AnswerDto AnswerDto { get; set; }
 
-        [Parameter]
-        public AnswerDto AnswerDto { get; set; }
-
-        protected override void OnInitialized() {
-            base.OnInitialized();
-
-
-        }
-
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
     }
+
+
+    public String Text = "falsch";
+    public String Color = "warning";
+
+    private void mouseOut()
+    {
+        Color = AnswerDto.IsCorrect ? "info" : "warning";
+    }
+
+    private void mouseIn()
+    {
+        Color = AnswerDto.IsCorrect ? "danger" : "success";
+    }
+
+    private void clicked()
+    {
+        AnswerDto.IsCorrect = AnswerDto.IsCorrect ? false : true;
+        Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
+    }
+
+}
