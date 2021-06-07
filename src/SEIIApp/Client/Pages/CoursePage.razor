@@ -23,7 +23,6 @@
         <span class="text">
 
         </span>
-        <a class="btn-primary" href="/feedback/@Course.Id">FEEDBACK</a>
         <div class="col-sm-2">
             <br />
             <span class="text">
@@ -32,6 +31,19 @@
 
         </div>
     </div>
+
+    if (Course.QuizId != "")
+    {
+
+        <a class="btn-primary btn-lg" href="/quiz/@Course.QuizId">QUIZ</a>
+    }
+    if (Course.PdfURL != "")
+    {
+        <a class="btn-primary btn-lg" href="@Course.PdfURL">PDF</a>
+    }
+
+    <a class="btn-primary btn-lg" href="/feedback/@Id">FEEDBACK</a>
+
 }
 
 
@@ -39,7 +51,6 @@
     [Parameter]
     public int Id { get; set; }
 
-    [Parameter]
     public CourseDto Course { get; set; }
 
     protected override async Task OnParametersSetAsync()

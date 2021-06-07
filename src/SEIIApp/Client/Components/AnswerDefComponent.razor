@@ -5,7 +5,7 @@
 
 <InputText placeholder="Antwort eingeben" @bind-Value="AnswerDto.AnswerText" />
 
-<button type="button" class="btn btn-@Color" @onmouseout="mouseOut" @onmouseover="mouseIn" @onmousedown="clicked" style="text-align: left;">@Text</button>
+<button type="button" class="btn btn-@Color" @onmousedown="clicked" style="text-align: left;">@Text</button>
 
 <ValidationSummary />
 @code {
@@ -16,25 +16,19 @@
     protected override void OnInitialized()
     {
         base.OnInitialized();
-    }
-
-
-    public String Text = "falsch";
-    public String Color = "warning";
-
-    private void mouseOut()
-    {
+        Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
         Color = AnswerDto.IsCorrect ? "info" : "warning";
     }
 
-    private void mouseIn()
-    {
-        Color = AnswerDto.IsCorrect ? "danger" : "success";
-    }
+
+    public String Text = "loading";
+    public String Color = "light";
+
 
     private void clicked()
     {
         AnswerDto.IsCorrect = AnswerDto.IsCorrect ? false : true;
+        Color = AnswerDto.IsCorrect ? "info" : "warning";
         Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
     }
 

@@ -4,35 +4,39 @@
 
 @inject Services.QuizBackendAccessService QuizService
 @inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
 
 <h3>Quiz Editor</h3>
-<center>
-    @if (Quizzes?.Length > 0)
+
+@if (Quizzes?.Length > 0)
+{
+
+
+
+    <ol>
+        @foreach (var quiz in Quizzes)
         {
+            <li>
+                @quiz.Name&nbsp;
+                <button class="btn btn-primary" @onclick="() => EditQuiz(quiz)" style="margin:2px">
+                    EDIT
+                </button>&nbsp;
+                <button class="btn btn-danger" @onclick="() => DeleteQuiz(quiz)">
+                    DELETE
+                </button>&nbsp;
+            </li>
+        }
+    </ol>
 
-            <div class="jumbotron border" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; max-width:500px">
+    <button @onclick="AddQuiz">Add Quiz</button>
 
-                
-                <ol>
-                    @foreach (var quiz in Quizzes)
-                    {
-                        <li>
-                            <button class="btn btn-primary" @onclick="() => EditQuiz(quiz)">
-                                @(quiz.Name)
-                            </button>
-                        </li>
-                    }
-                </ol>
 
-                <button @onclick="AddQuiz">Add Quiz</button>
-            </div>
-
-    }
-    else
-    {
+}
+else
+{
     <h5>Loading ...  or no quizzes found.</h5>
-    }
-</center>
+}
+
 
 
 @code {
@@ -53,5 +57,15 @@
     private void AddQuiz()
     {
         NavigationManager.NavigateTo("/quizdefedit/0");
+    }
+
+    async Task DeleteQuiz(QuizDto quiz)
+    {
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+        if (confirmed)
+        {
+            await QuizService.DeleteQuiz(quiz.Id);
+            Quizzes = await QuizService.GetQuizOverview();
+        }
     }
 }

@@ -11,35 +11,45 @@
 @if (QuizDto != null)
 {
     <center>
-        <div class="jumbotron border" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; max-width:500px">
+        <div class="jumbotron border" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem;">
 
             <EditForm EditContext="@context" OnSubmit="OnSubmit">
                 <ObjectGraphDataAnnotationsValidator />
-                
-                <InputText placeholder="Quiz Namen eingeben" @bind-Value="QuizDto.Name" style="font-size:24px"/>
 
-                @foreach (var question in QuizDto.Questions)
-                {
-                    <div class="jumbotron border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; max-width:550px">
+                <InputText placeholder="Quiz Namen eingeben" @bind-Value="QuizDto.Name" style="float:left; font-size:24px;" /><br /><br />
 
-                        <!-- Component for questions in quiz -->
-                        <QuestionDefComponent QuestionDto="@question"></QuestionDefComponent>
-                        <button class="btn btn-light btn-sm" style="text-align:left" @onclick="() => RemoveQuestion(question) ">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
-                                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
-                            </svg>
-                        </button>
+                <div class="row">
 
+
+
+
+                    @foreach (var question in QuizDto.Questions)
+                    {<div class="col-sm-4">
+
+                            <div class="jumbotron border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; width:500px">
+                                <button class="btn btn-light btn-sm" style="float:right; margin:0px; padding:0px" @onclick="() => RemoveQuestion(question) ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
+                                        <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z" />
+                                    </svg>
+                                </button>
+                                <div style="font-size:16px">&nbsp;</div>
+                                <!-- Component for questions in quiz -->
+                                <QuestionDefComponent QuestionDto="@question"></QuestionDefComponent>
+
+
+                            </div>
+                        </div>
+                    }
+
+                    <ValidationSummary />
+                    <div class="col-sm-4">
+                        <div class="jumbotron-add border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; margin-bottom: 12px; width:500px;" @onclick="AddQuestion">
+                            <span style="font-size: 48px">+</span>
+                        </div>
                     </div>
-                }
-
-                <ValidationSummary />
-
-                <div class="jumbotron-add border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; max-width:500px;" @onclick="AddQuestion">
-                    <span style="font-size: 48px">Add Question</span>
                 </div>
-                <button class="btn btn-light" @onclick="SaveQuizToBackend" style="text-align:right">Save Complete Quiz</button>
+                <button class="btn btn-light border-dark" @onclick="SaveQuizToBackend" style="float:right"><img src="icons/save_black_24dp.svg" /> Save Quiz</button>
 
             </EditForm>
         </div>

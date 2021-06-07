@@ -6,16 +6,16 @@
 @inject NavigationManager NavigationManager
 @inject IJSRuntime JsRuntime
 
-<h3>Courses Overview</h3>
+<h3>Courses Editor</h3>
 
 @{ if (Courses?.Length > 0)
     {
         <ol>
             @foreach (var course in Courses)
             {
-                <li>
+                <li border>
                     @(course.Name)
-                    <button class="btn btn-primary" @onclick="() => EditCourse(course)">Edit</button>
+                    <button class="btn btn-primary" @onclick="() => EditCourse(course)"style="margin:2px">Edit</button>
                     <button class="btn btn-danger" @onclick="() => DeleteCourse(course)">Delete</button>
                 </li>
             }
@@ -58,8 +58,10 @@
         if (confirmed)
         {
             await CourseService.DeleteCourse(course.Id);
-            StateHasChanged();
         }
+
+
+        Courses = await CourseService.GetCourseOverview();
 
     }
 }

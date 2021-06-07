@@ -19,23 +19,24 @@ namespace SEIIApp.Server.DataAccess
     /// <summary>
     /// Creates a test quiz definition, with the number of questions and the number of answers per question defined
     /// </summary>
-    public static Quiz CreateQuiz(int toIncludeTestQuestions = 3, int toIncludeTestAnswers = 5)
+    public static Quiz CreateQuiz()
     {
         Random rnd = new Random();
         var quiz = new Quiz();
         quiz.Questions = new List<Question>();
 
-        for (int q = 0; q < toIncludeTestQuestions; q++)
+        for (int q = 0; q < 2+rnd.Next(8); q++)
         {
             var question = new Question();
-            question.QuestionText = RandomWords[rnd.Next(RandomWords.Length)];
+            question.QuestionText = RandomWords[rnd.Next(RandomWords.Length)] + "?";
             question.Answers = new List<Answer>();
 
 
-            for (int a = 0; a < toIncludeTestAnswers; a++)
+            for (int a = 0; a < 2 + rnd.Next(4); a++)
             {
                 var answer = new Answer();
-                answer.AnswerText = RandomWords[rnd.Next(RandomWords.Length)];
+                answer.AnswerText = RandomWords[rnd.Next(RandomWords.Length)] + "!";
+                 answer.IsCorrect = rnd.Next(3) > 1;
                 question.Answers.Add(answer);
             }
 

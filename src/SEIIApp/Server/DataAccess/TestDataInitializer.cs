@@ -20,7 +20,7 @@ namespace SEIIApp.Server.DataAccess {
         public static void InitializeQuizTestData(Services.QuizService quizService) {
             for (int i = 0; i < 5; i++) {
                 var quiz = TestDataGenerator.CreateQuiz();
-                quiz.Name = titles[i % titles.Length];
+                quiz.Name = titles[i % titles.Length] + "-Quiz";
                 quizService.AddQuiz(quiz);
             }
 
@@ -45,7 +45,7 @@ namespace SEIIApp.Server.DataAccess {
                                                     Name = "Officiis dolor distinctio",
                                                     Desc = "Quasi eum aliquid dignissimos vel vitae. Cupiditate quaerat id consectetur dolores id. Officiis dolor distinctio qui ipsam nesciunt aut. Ea minus voluptatem optio pariatur explicabo. Quibusdam error molestias reprehenderit distinctio. Qui sed excepturi ullam dolorem ut omnis.",
                                                     Progress = 100,
-                                                    Img = "https://qtxasset.com/fiercehealthcare/1562973884/GettyImages-898906336.jpg/GettyImages-898906336.jpg?OhHp8.hb4iZbXQ.xHf4.JzCZpWlc56My",
+                                                    Img = "https://adwonline.ae/wp-content/uploads/2020/05/Reem-Hospital-1024x683.jpg",
                                                     PdfURL = "example files/Pdf Datei.pdf"
                                                 }, new Course
                                                 {

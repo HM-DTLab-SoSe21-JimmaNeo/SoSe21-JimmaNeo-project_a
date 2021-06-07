@@ -63,11 +63,10 @@ namespace SEIIApp.Server.Services
 
             var existingCourse = GetCourseWithId(Course.Id);
 
-            Mapper.Map(Course, existingCourse); //we can map into the same object type
 
-            DatabaseContext.Courses.Update(existingCourse);
-            DatabaseContext.SaveChanges();
-            return existingCourse;
+            RemoveCourse(existingCourse);
+            AddCourse(Course);
+            return Course;
         }
 
         /// <summary>

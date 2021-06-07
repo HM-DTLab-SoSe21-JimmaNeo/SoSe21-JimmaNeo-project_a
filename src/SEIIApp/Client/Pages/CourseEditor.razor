@@ -6,16 +6,53 @@
 @inject NavigationManager NavManager
 @inject Services.CourseBackendAccessService CourseService
 
-@if (CourseDto != null)
+@if (Course != null)
 {
 
-<h3>Course Editor</h3>
-    <CourseDefComponent Course="CourseDto" />
+    <h3>Course Editor</h3>
+
+    @using SEIIApp.Shared
+
+    <h5>Course Editor</h5>
+
+    <EditForm Model="@Course">
+        <DataAnnotationsValidator />
+
+        <label>Course Name</label>
+        <InputText @bind-Value="Course.Name" />
+        <div>&nbsp;</div>
+
+        <label>Course Description</label>
+        <InputText @bind-Value="Course.Desc" />
+        <div>&nbsp;</div>
+
+        <label>Course Image</label>
+        <InputText @bind-Value="Course.Img" />
+        <div>&nbsp;</div>
+
+        <label>Course Text (Optional, ersätzt Description)</label>
+        <InputText @bind-Value="Course.Text" />
+        <div>&nbsp;</div>
+
+        <label>Video (Optiona)</label>
+        <InputText @bind-Value="Course.VideoURL" />
+        <div>&nbsp;</div>
+
+        <label>PDF (Optiona)</label>
+        <InputText @bind-Value="Course.PdfURL" />
+        <div>&nbsp;</div>
+
+        <label>Quiz (Optional)</label>
+        <InputText @bind-Value="Course.QuizId" />
+
+        <ValidationSummary />
+    </EditForm>
+
     <button class="btn" @onclick="SaveCourseToBackend"><img src="icons/save_black_24dp.svg" /></button>
 }
 else
 {
-<h5>Course in loading (or not found) ...</h5>
+    <h5>Course in loading (or not found) ...</h5>
 }
 
 @code {
@@ -24,32 +61,30 @@ else
     [Parameter]
     public int CourseId { get; set; }
 
-    public CourseDto CourseDto { get; set; }
+    public CourseDto Course { get; set; }
 
 
-    protected override async Task OnParametersSetAsync() {
-        if (CourseId != 0) {
-            var existingCourse = await CourseService.GetCourseById(CourseId);
-            PrepareEditOrAddOfCourse(existingCourse);
+    protected override async Task OnParametersSetAsync()
+    {
+        if (CourseId != 0)
+        {
+            Course = await CourseService.GetCourseById(CourseId);
+        } else
+        {
+            Course = new CourseDto();
         }
-        else {
-            PrepareEditOrAddOfCourse(new CourseDto());
-        }
-        await base.OnParametersSetAsync();
     }
 
-    private void PrepareEditOrAddOfCourse(CourseDto q) {
-        this.CourseDto = q;
-    }
 
     private void OnSubmit()
-        {
+    {
 
-        }
+    }
 
-    private async void SaveCourseToBackend() {
-        
-        var answer = await CourseService.AddOrUpdateCourse(CourseDto);
+    private async void SaveCourseToBackend()
+    {
+
+        await CourseService.AddOrUpdateCourse(Course);
         NavManager.NavigateTo("/courseeditor");
 
     }
