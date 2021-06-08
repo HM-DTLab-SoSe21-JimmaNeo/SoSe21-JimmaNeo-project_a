@@ -8,7 +8,6 @@ namespace SEIIApp.Shared
         [Required]
         public ContactInformationDto ContactInfo { get; set; }
 
-        [Required]
         public string Category { get; set; }
 
         [Required(ErrorMessage = "Nachricht mit mindestens 20 Buchstaben angeben")]

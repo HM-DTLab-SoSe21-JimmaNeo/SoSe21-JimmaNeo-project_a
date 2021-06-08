@@ -38,7 +38,7 @@ namespace SEIIApp.Server.DataAccess {
                                                     Progress = 100,
                                                     Img = "https://goafricahealth.com/wp-content/uploads/2017/10/34689294_l.jpg",
                                                     VideoURL = "C9udNPYVKr8",
-                                                    PdfURL = "example files/Pdf Datei.pdf",
+                                                    PdfURL = "example_files/Pdf_Datei.pdf",
                                                     QuizId = "1"
                                                }, new Course
                                                 {

@@ -8,7 +8,6 @@
 .main {
     flex: 1;
 }
-
 .sidebar {
     background: linear-gradient( 15deg, rgb(40 167 69), rgb(4 72 4));
     position: sticky;

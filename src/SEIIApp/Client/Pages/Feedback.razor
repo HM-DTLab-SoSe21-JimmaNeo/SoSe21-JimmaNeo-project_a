@@ -122,16 +122,16 @@
     [Parameter]
     public int? CourseId { get; set; }
 
+
     public FeedbackDto message = new FeedbackDto()
     {
         ContactInfo = new ContactInformationDto()
     };
 
-    private EditContext context { get; set; }
+private EditContext context { get; set; }
 
     async Task sendFeedback()
     {
-
         if (context.Validate())
         {
             bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");

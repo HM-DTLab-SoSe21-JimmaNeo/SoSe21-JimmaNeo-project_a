@@ -2,7 +2,6 @@
 
 @inject Services.CourseBackendAccessService CourseService
 
-
 @if (Course != null)
 
 {
@@ -10,40 +9,40 @@
     <h1>
         @Course.Name
     </h1>
-    <div class="row">
-        <div class="col-sm-10">
+    @if (Course.VideoURL != null && Course.VideoURL != "")
+    {
+        <div class="row">
+            <div class="col-sm-10">
 
-            @if (Course.VideoURL != null && Course.VideoURL != "")
-            {
-                <div class="videoResponsive">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/@Course.VideoURL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            }
+                @if (Course.VideoURL != null && Course.VideoURL != "")
+                {
+                    <div class="videoResponsive" style="margin-bottom: 24px;">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/@Course.VideoURL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                }
+            </div>
+            <div class="col-sm-2">
+                
+                <QuizButton QuizId="1"></QuizButton>
+
+               
+                <PDFButton Url=""></PDFButton>
+
+
+                <FeedbackButton CourseId="1"></FeedbackButton>
+            </div>
         </div>
+
+
+        <br />
         <span class="text">
-
+            @Course.Desc
         </span>
-        <div class="col-sm-2">
-            <br />
-            <span class="text">
-                @Course.Desc
-            </span>
-
-        </div>
-    </div>
-
-    if (Course.QuizId != "")
-    {
-
-        <a class="btn-primary btn-lg" href="/quiz/@Course.QuizId">QUIZ</a>
     }
-    if (Course.PdfURL != "")
+    else
     {
-        <a class="btn-primary btn-lg" href="@Course.PdfURL">PDF</a>
+        <p>HIER IST KEIN VIDEO</p>
     }
-
-    <a class="btn-primary btn-lg" href="/feedback/@Id">FEEDBACK</a>
-
 }
 
 
@@ -57,4 +56,7 @@
     {
         Course = await CourseService.GetCourseById(Id);
     }
+
+  
+
 }

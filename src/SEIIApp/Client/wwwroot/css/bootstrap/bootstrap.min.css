@@ -4,8 +4,10 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 :root {
+    --alive-green: #064d07;
     --light-grey: #f6f6f6;
     --indigo: #6610f2;
     --purple: #6f42c1;
@@ -21,7 +23,7 @@
     --gray-dark: #343a40;
     --primary: #99caff;
     --secondary: #6c757d;
-    --success: #28a745;
+    --success: #31cb54;
     --info: #17a2b8;
     --warning: #ffc107;
     --danger: #dc3545;
@@ -74,7 +76,8 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
     margin-top: 0;
-    margin-bottom: .5rem
+    margin-bottom: .5rem;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 p {
@@ -6471,6 +6474,19 @@ a.close.disabled {
     background-color: #007bff !important
 }
 
+.bg-cyan {
+    background-color: #17a2b8 !important
+}
+
+.bg-cyan-focus {
+    background-color: #34cde5 !important
+}
+
+.bg-alive-green {
+    background-color: #27a242 !important;
+    color: #FFFFFF;
+}
+
 a.bg-primary:focus, a.bg-primary:hover, button.bg-primary:focus, button.bg-primary:hover {
     background-color: #0062cc !important
 }
@@ -6484,7 +6500,8 @@ a.bg-secondary:focus, a.bg-secondary:hover, button.bg-secondary:focus, button.bg
 }
 
 .bg-success {
-    background-color: #28a745 !important
+    background-color: #31cb54 !important;
+    color: #FFFFFF;
 }
 
 a.bg-success:focus, a.bg-success:hover, button.bg-success:focus, button.bg-success:hover {

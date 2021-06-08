@@ -34,23 +34,23 @@
 </div>
 
 @code {
-    /* Parameter */
-    [Parameter]
-    public int Id { get; set; }
-    [Parameter]
-    public string Name { get; set; }
-    [Parameter]
-    public string Desc { get; set; }
-    [Parameter]
-    public string Img { get; set; }
-    [Parameter]
-    public string Video { get; set; }
-    [Parameter]
-    public string Pdf { get; set; }
-    [Parameter]
-    public string Quiz { get; set; }
-    [Parameter]
-    public int progress { get; set; }
+        /* Parameter */
+        [Parameter]
+        public int Id { get; set; }
+        [Parameter]
+        public string Name { get; set; }
+        [Parameter]
+        public string Desc { get; set; }
+        [Parameter]
+        public string Img { get; set; }
+        [Parameter]
+        public string Video { get; set; }
+        [Parameter]
+        public string Pdf { get; set; }
+        [Parameter]
+        public string Quiz { get; set; }
+        [Parameter]
+        public int progress { get; set; }
 
 
 
@@ -82,7 +82,12 @@
 
     protected override async Task OnParametersSetAsync()
     {
-        if (Img == null || Img == "")
+        if (Img == null || Img == "" && Video != null && Video != "")
+        {
+            Img = "https://img.youtube.com/vi/" + Video + "/hqdefault.jpg";
+
+        }
+        else if(Img == "")
         {
             Img = "http://www.clker.com/cliparts/q/L/P/Y/t/6/no-image-available-hi.png";
         }

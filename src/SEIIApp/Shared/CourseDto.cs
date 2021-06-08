@@ -18,8 +18,18 @@ namespace SEIIApp.Shared
 
 
         public string VideoURL { get; set; }
+
+
         public string PdfURL { get; set; }
+
         public string QuizId { get; set; }
+
+        // Progress Bereich
+        public bool CourseVisited { get; set; }
+
+        public int QuizProgress { get; set; }
+
+        public bool pdfDownloaded { get; set; }
 
         public int Progress { get; set; }
     }
