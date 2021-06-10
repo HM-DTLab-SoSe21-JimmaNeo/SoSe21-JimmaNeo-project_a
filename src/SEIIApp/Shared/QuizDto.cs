@@ -15,6 +15,29 @@ namespace SEIIApp.Shared {
         public string Name { get; set; }
 
         public QuestionDto[] Questions { get; set; }
+
+        public int Progress { get; set; }
+
+        public int calculateProgress()
+        {
+            int counter = 0;
+            foreach (QuestionDto question in Questions)
+            {
+                foreach (AnswerDto answer in question.Answers)
+                {
+                    if (!answer.CheckAnswer())
+                    {
+                        goto next;
+                    }
+                }
+                counter++;
+                next:;
+            }
+            Progress = counter;
+            return Progress;
+        }
+
+        public int CourseId { get; set; }
     }
 
 }

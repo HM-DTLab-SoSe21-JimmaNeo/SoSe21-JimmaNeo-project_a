@@ -5,11 +5,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SEIIApp.Server.Domain {
-    public class DomainMapper : Profile {
+namespace SEIIApp.Server.Domain
+{
+    public class DomainMapper : Profile
+    {
 
-        public DomainMapper() {
-
+        public DomainMapper()
+        {
             CreateMap<Quiz, QuizDto>()
                 .ForMember(quizDto => quizDto.Questions, opts => opts.MapFrom(obj => obj.Questions.ToArray()));
             CreateMap<QuizDto, Quiz>()

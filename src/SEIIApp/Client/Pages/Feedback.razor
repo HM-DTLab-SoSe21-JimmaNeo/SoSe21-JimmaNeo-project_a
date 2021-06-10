@@ -48,37 +48,39 @@
     }
     else if (Course != null)
     {
-        <div class="col-sm-12">
-            <h1 style="font-size: 2.5em; font-family: 'Ubuntu', sans-serif; font-weight:lighter; padding-top:0.75%; padding-bottom:2%">Feedback: Kurs "@Course.Name"</h1>
-        </div>
-        <div class="col-sm-3">
+    <div class="col-sm-12">
+        <h1 style="font-size: 2.5em; font-family: 'Ubuntu', sans-serif; font-weight:lighter; padding-top:0.75%; padding-bottom:2%">Feedback: "@Course.Name"</h1>
 
-            <label for="flexRadioDefault1">Kategorie?</label>
-            <div class="form-check align-middle">
-                <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                <label class="form-check-label" for="flexRadioDefault1">
-                    Uns fehlt die Ausstattung
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                <label class="form-check-label" for="flexRadioDefault2">
-                    Bei uns wir es anders gemacht
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                <label class="form-check-label" for="flexRadioDefault3">
-                    Auf einzelne Lerninhalte wurde nicht ausreichend eingegangen
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
-                <label class="form-check-label" for="flexRadioDefault4">
-                    Andere Kategorie
-                </label>
-            </div>
+    </div>
+
+    <div class="col-sm-3">
+
+        <label for="flexRadioDefault1">Kategorie?</label>
+        <div class="form-check align-middle">
+            <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+            <label class="form-check-label" for="flexRadioDefault1">
+                Auf einzelne Lerninhalte wurde nicht ausreichend eingegangen
+            </label>
         </div>
+        <div class="form-check">
+            <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+            <label class="form-check-label" for="flexRadioDefault2">
+                Bei uns wir es anders gemacht
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+            <label class="form-check-label" for="flexRadioDefault3">
+                Uns fehlt die Ausstattung
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input align-middle" type="radio" name="flexRadioDefault" id="flexRadioDefault4">
+            <label class="form-check-label" for="flexRadioDefault4">
+                Andere Kategorie
+            </label>
+        </div>
+    </div>
     }
 
     <div class="col-sm-9">
@@ -89,10 +91,9 @@
                 <EditForm EditContext="@context">
                     <DataAnnotationsValidator /><ValidationSummary />
                     <label for="name">Name: </label>
-                    <InputText id="name" placeholder="Name eingeben" @bind-Value="message.ContactInfo.Name" />&nbsp;&nbsp;&nbsp;
+                    <InputText id="name" placeholder="Name eingeben" @bind-Value="message.Name" />&nbsp;&nbsp;&nbsp;
                     <label for="email">Email: </label>
-                    <InputText id="email" placeholder="Email eingeben" @bind-Value="message.ContactInfo.Email" />
-                    <ValidationMessage For="@(()=> message.ContactInfo.Email)"></ValidationMessage>
+                    <InputText id="email" placeholder="Email eingeben" @bind-Value="message.Email" />
 
                     <div style="font-size:12px">&nbsp;</div>
                     <div class="form-group">
@@ -123,12 +124,9 @@
     public int? CourseId { get; set; }
 
 
-    public FeedbackDto message = new FeedbackDto()
-    {
-        ContactInfo = new ContactInformationDto()
-    };
+    public FeedbackDto message = new FeedbackDto();
 
-private EditContext context { get; set; }
+    private EditContext context { get; set; }
 
     async Task sendFeedback()
     {
@@ -152,12 +150,13 @@ private EditContext context { get; set; }
 
     protected override async Task OnParametersSetAsync()
     {
+
+        context = new EditContext(message);
         if (CourseId != null)
         {
             Course = await CourseService.GetCourseById((int)CourseId);
 
         }
 
-        context = new EditContext(message);
     }
 }

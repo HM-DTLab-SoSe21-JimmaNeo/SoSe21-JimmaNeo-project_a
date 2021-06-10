@@ -8,8 +8,14 @@
     [Parameter]
     public AnswerDto Answer { get; set; }
 
+    [CascadingParameter]
+    public MultipleChoice ParentComponent { get; set; }
 
-
+    public void refresh()
+    {
+        mouseOut();
+        StateHasChanged();
+    }
 
 
     private void mouseOut()
@@ -28,4 +34,11 @@
         mouseOut();
     }
 
+    protected override void OnInitialized()
+    {
+        if (ParentComponent == null)
+            throw new Exception("Must be used within MyParentComponent");
+        ParentComponent.AddChild(this);
+
+    }
 }

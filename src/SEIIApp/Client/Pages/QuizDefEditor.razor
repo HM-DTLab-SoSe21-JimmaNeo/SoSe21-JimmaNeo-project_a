@@ -1,5 +1,6 @@
 ﻿@page "/quizdefedit/{QuizId:int}"
 
+@using System.Threading
 @using SEIIApp.Shared
 @using SEIIApp.Client.Components
 
@@ -26,7 +27,7 @@
                     @foreach (var question in QuizDto.Questions)
                     {<div class="col-sm-4">
 
-                            <div class="jumbotron border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; width:500px">
+                            <div class="jumbotron border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; width:100%">
                                 <button class="btn btn-light btn-sm" style="float:right; margin:0px; padding:0px" @onclick="() => RemoveQuestion(question) ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z" />
@@ -35,8 +36,10 @@
                                 </button>
                                 <div style="font-size:16px">&nbsp;</div>
                                 <!-- Component for questions in quiz -->
-                                <QuestionDefComponent QuestionDto="@question"></QuestionDefComponent>
 
+                                <CascadingValue Value=@this>
+                                    <QuestionDefComponent QuestionDto="@question"></QuestionDefComponent>
+                                </CascadingValue>
 
                             </div>
                         </div>
@@ -44,7 +47,12 @@
 
                     <ValidationSummary />
                     <div class="col-sm-4">
-                        <div class="jumbotron-add border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; margin-bottom: 12px; width:500px;" @onclick="AddQuestion">
+                        <div class="jumbotron-add border bg-light" style="        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        overflow: hidden;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        margin-bottom: 12px;
+        width: 100%;" @onclick="AddQuestion">
                             <span style="font-size: 48px">+</span>
                         </div>
                     </div>
@@ -61,6 +69,21 @@ else
 }
 
 @code {
+    private List<QuestionDefComponent> QuestionComponents = new List<QuestionDefComponent>();
+
+    public void AddChild(QuestionDefComponent component)
+    {
+        QuestionComponents.Add(component);
+    }
+
+    public void refresh(Object timer)
+    {
+
+        foreach (QuestionDefComponent component in QuestionComponents)
+        {
+            component.refresh(timer);
+        }
+    }
 
 
     [Parameter]
@@ -103,6 +126,9 @@ else
     private void RemoveQuestion(QuestionDto question)
     {
         QuizDto.Questions = QuizDto.Questions.Where(q => q != question).ToArray();
+        Timer timer = new Timer(new TimerCallback(refresh));
+        timer.Change(1, 0);
+
     }
 
     private void OnSubmit(EditContext context)

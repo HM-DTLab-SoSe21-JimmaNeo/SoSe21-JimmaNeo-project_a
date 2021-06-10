@@ -1,13 +1,12 @@
-﻿@inject NavigationManager NavigationManager
-
-<div class="jumbotron border bg-@b" style="color:#FFFFFF; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem" @onmouseout="mouseOut" @onmouseover="mouseIn" @onmousedown="clicked">
-    <center>Feedback</center>
-</div>
-
+﻿<a href="/feedback/@CourseId" style="text-decoration:none">
+    <div class="jumbotron border bg-@b" style="color:#FFFFFF; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem; margin-bottom:0" @onmouseout="mouseOut" @onmouseover="mouseIn" >
+        <center>Feedback</center>
+    </div>
+</a>
 @code {
 
     [Parameter]
-    public string CourseId { get; set; }
+    public int CourseId { get; set; }
 
     public string b = "cyan";
 
@@ -20,11 +19,6 @@
     private void mouseOut()
     {
         b = "cyan";
-    }
-
-    private void clicked()
-    {
-        NavigationManager.NavigateTo("/Feedback/");
     }
 
 }

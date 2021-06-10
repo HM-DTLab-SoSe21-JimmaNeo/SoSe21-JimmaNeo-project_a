@@ -15,5 +15,7 @@ namespace SEIIApp.Server.Domain {
 
         public List<Question> Questions { get; set; }
 
+        public int Progress { get; set; }
+
     }
 }

@@ -11,7 +11,7 @@
                 </h2>
             </div>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionFaqOne">
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionFaqOne">
                 <div class="card-body">
                     Dies ist die Alpha Version.
                 </div>
@@ -357,7 +357,7 @@
                 </h2>
             </div>
 
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionFaqThree">
+            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionFaqThree">
                 <div class="card-body">
                     Als Administrator kann man unter ‘Courses’ die Option ‘add’ auswählen.
                     Dabei wird ein noch nicht sichtbarer Kurs erzeugt. Wenn man mit dem Erstellen fertig ist, muss der Kurs noch veröffentlicht werden. Dazu dient der Knopf ‘publish’.
@@ -416,11 +416,17 @@
     </div>
 
 <style>
-    .btn-link {
-        color: #19721c;
+    .card-header {
+        background-color: #4dad4f;
     }
 
-    h3{
-        font-family: 'Ubuntu', sans-serif;
+    .btn-link {
+        font-weight: 400;
+        color: #ffffff;
+        text-decoration: none;
     }
+
+        .btn-link:hover {
+            color: rgba(0, 0, 0, 0.66);
+        }
 </style>

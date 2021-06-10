@@ -17,7 +17,7 @@
     }
     else
     {
-        <MultipleChoice Questions=@Quiz.Questions />
+        <MultipleChoice Quiz=@Quiz />
     }
 
 </div>
@@ -45,6 +45,7 @@
             NavManager.NavigateTo("/quiz");
         }
     }
+
 
     /**
     private QuestionDto[] Questions =

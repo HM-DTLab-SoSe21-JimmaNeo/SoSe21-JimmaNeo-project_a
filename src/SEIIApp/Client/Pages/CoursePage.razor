@@ -11,37 +11,81 @@
     </h1>
     @if (Course.VideoURL != null && Course.VideoURL != "")
     {
-        <div class="row">
-            <div class="col-sm-10">
+        <div class="row" style="margin-bottom:12px">
+            <div class="col-sm-9">
 
                 @if (Course.VideoURL != null && Course.VideoURL != "")
                 {
-                    <div class="videoResponsive" style="margin-bottom: 24px;">
+                    <div class="videoResponsive" >
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/@Course.VideoURL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 }
             </div>
-            <div class="col-sm-2">
-                
-                <QuizButton QuizId="1"></QuizButton>
+            <div class="col-sm-3">
 
-               
-                <PDFButton Url=""></PDFButton>
+                @if (Course.QuizId != null)
+                {
+                    <QuizButton QuizId="@Course.QuizId"></QuizButton>
+
+                }
+                @if (Course.PdfURL != null)
+                {
+
+                    <PDFButton Url=""></PDFButton>
+                }
 
 
-                <FeedbackButton CourseId="1"></FeedbackButton>
+
+                <FeedbackButton CourseId="Id"></FeedbackButton>
             </div>
         </div>
 
 
         <br />
-        <span class="text">
-            @Course.Desc
-        </span>
+        <div class="jumbotron border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; margin-top: 0; padding-top: 0.5rem; padding-bottom: 0.8rem; margin-top:0; cursor: default;">
+            <span class="text">
+                @if (Course.Text == null || Course.Text == "")
+                {
+                    @Course.Desc
+                }
+                else
+                {
+
+                    <div>@((MarkupString) Course.Text)</div>
+
+
+                }
+            </span>
+        </div>
     }
     else
     {
-        <p>HIER IST KEIN VIDEO</p>
+        <div class="jumbotron border bg-light" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; margin-top:1rem; padding-top: 1rem; padding-bottom: 1rem; cursor: default;">
+            <span class="text">
+                @if (Course.Text == null || Course.Text == "")
+                {
+                    @Course.Desc
+                }
+                else
+                {
+                    <div>@((MarkupString) Course.Text)</div>
+
+
+                }
+            </span>
+        </div>
+        @if (Course.QuizId != null)
+        {
+            <QuizButton QuizId="1"></QuizButton>
+
+        }
+        @if (Course.PdfURL != null)
+        {
+
+            <PDFButton Url=""></PDFButton>
+        }
+
+        <FeedbackButton CourseId="@Id"></FeedbackButton>
     }
 }
 
@@ -50,6 +94,7 @@
     [Parameter]
     public int Id { get; set; }
 
+
     public CourseDto Course { get; set; }
 
     protected override async Task OnParametersSetAsync()
@@ -57,6 +102,6 @@
         Course = await CourseService.GetCourseById(Id);
     }
 
-  
+
 
 }

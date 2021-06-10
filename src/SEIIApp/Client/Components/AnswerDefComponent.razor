@@ -9,6 +9,8 @@
 
 <ValidationSummary />
 @code {
+    [CascadingParameter]
+    public QuestionDefComponent ParentComponent { get; set; }
 
     [Parameter]
     public AnswerDto AnswerDto { get; set; }
@@ -18,8 +20,18 @@
         base.OnInitialized();
         Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
         Color = AnswerDto.IsCorrect ? "info" : "warning";
+
+        if (ParentComponent == null)
+            throw new Exception("Must be used within MyParentComponent");
+        ParentComponent.AddChild(this);
     }
 
+    public void refresh()
+    {
+        Color = AnswerDto.IsCorrect ? "info" : "warning";
+        Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
+        StateHasChanged();
+    }
 
     public String Text = "loading";
     public String Color = "light";
