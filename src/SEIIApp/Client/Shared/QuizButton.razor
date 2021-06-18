@@ -1,0 +1,47 @@
+﻿@inject Services.QuizBackendAccessService QuizService
+
+<a href="/quiz/@QuizId" style="text-decoration:none">
+    <div class="jumbotron border bg-@b" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem" @onmouseout="mouseOut" @onmouseover="mouseIn" >
+        Quiz:
+        @if (Quiz != null)
+        {<span style="float:right">@Quiz.Name</span><br />
+        <small>@Quiz.Progress / @Quiz.Questions.Length</small>
+        <div class="progress border" style="background-color: #FFFFFF; margin-bottom:2px">
+            <div class="progress-bar" role="progressbar" aria-valuenow="@QuizPercentage" aria-valuemin="0" aria-valuemax="100" style="width:@QuizPercentage%">@QuizPercentage%</div>
+        </div>}
+    </div>
+</a>
+
+@code {
+    [Parameter]
+    public string QuizId { get; set; }
+
+    public int QuizPercentage { get; set; }
+
+    public string b = "alive-green";
+
+    private void mouseIn()
+    {
+        b = "success";
+
+    }
+
+    private void mouseOut()
+    {
+        b = "alive-green";
+    }
+
+
+    private QuizDto Quiz;
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Quiz = await QuizService.GetQuizById(Int32.Parse(QuizId));
+        QuizPercentage = (Quiz.Progress *100) / Quiz.Questions.Length;
+    }
+}
+<style>
+    .jumbotron {
+        cursor: pointer;
+    }
+</style>

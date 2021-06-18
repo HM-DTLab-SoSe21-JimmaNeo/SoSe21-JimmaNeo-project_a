@@ -1,0 +1,127 @@
+﻿@using System.Threading
+    
+<div class="jumbotron border bg-light-grey" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); min-width:90% !important; padding-bottom:10px; text-align: left;">
+@if (Page < Quiz.Questions.Length)
+{
+    <h3>@Quiz.Questions[Page].QuestionText</h3>
+    <div style="font-size:24px">&nbsp;</div>
+    @foreach (var Answer in Quiz.Questions[Page].Answers)
+    {
+        <CascadingValue Value=@this>
+            <AnswerButton Answer="@Answer"></AnswerButton>
+        </CascadingValue>
+    }
+    <div style="font-size: 24px">&nbsp;</div>
+    <button class="btn btn-light btn-outline-dark btn-lg" @onclick="previousPage" disabled=@backDisabled>←</button>
+    <button class="btn btn-light btn-outline-dark btn-lg float-right" @onclick="nextPage">→</button>
+    <br />
+    <small>@(Page+1) / @Quiz.Questions.Length</small>
+}
+else if (!QuizCompleted)
+{
+    <h3>
+        QUIZ ABSCHLIESSEN?
+    </h3>
+    <div style="font-size: 12px">&nbsp;</div>
+    <button class="btn btn-danger btn-lg" @onclick="finish">JA (KANN NICHT RÜCKGÄNGIG GEMACHT WERDEN)</button>
+    <div style="font-size: 12px">&nbsp;</div>
+    <button class="btn btn-dark btn-lg" @onclick="previousPage">NEIN (bring mich zurück!)</button>
+    <div style="font-size: 12px">&nbsp;</div>
+    <small>@(Page) / @Quiz.Questions.Length</small>
+    <div style="font-size: 12px">&nbsp;</div>
+
+}
+else
+{
+    <center>
+        <QuizResult Quiz="@Quiz" OnClickFunction="reset" />
+    </center>
+}
+@if (!QuizCompleted)
+{
+    <div class="progress" style="background-color: #a94c4c !important;">
+        <div class="progress-bar" role="progressbar" aria-valuenow="@Progress" aria-valuemin="0" aria-valuemax="100" style="width: @Progress%"></div>
+    </div>
+}
+
+</div>
+@code {
+    [Parameter]
+    public QuizDto Quiz { get; set; }
+
+    private List<AnswerButton> children = new List<AnswerButton>();
+
+    public void AddChild(AnswerButton component)
+    {
+        children.Add(component);
+    }
+
+    public bool QuizCompleted = false;
+
+    public int Page = 0;
+    public int Progress = 0;
+
+    public bool backDisabled = true;
+
+    private void previousPage()
+    {
+
+        if (--Page == 0) backDisabled = true;
+        updateProgress();
+
+    }
+
+    private void nextPage()
+    {
+        if (++Page == 1) backDisabled = false;
+        updateProgress();
+    }
+
+    private void updateProgress()
+    {
+
+        double result = ((double)Page / (double)Quiz.Questions.Length) * 100.0;
+        Progress = (int)result;
+        Timer timer = new Timer(new TimerCallback(refresh));
+        timer.Change(10, 0);
+    }
+
+    private void finish()
+    {
+        QuizCompleted = true;
+    }
+
+    public void reset()
+    {
+        foreach (QuestionDto question in Quiz.Questions)
+        {
+            foreach (AnswerDto answer in question.Answers)
+            {
+                answer.IsSelected = false;
+            }
+        }
+        Page = 0;
+        Progress = 0;
+        QuizCompleted = false;
+        Timer timer = new Timer(new TimerCallback(refresh));
+        timer.Change(1, 0);
+    }
+
+    public void refresh(Object timer)
+    {
+        if (timer != null)
+        {
+            Timer t = (Timer)timer;
+
+        }
+        foreach (AnswerButton button in children)
+        {
+            button.refresh();
+        }
+    }
+    protected override void OnInitialized()
+    {
+        updateProgress();
+    }
+
+}

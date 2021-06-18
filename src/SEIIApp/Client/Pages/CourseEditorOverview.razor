@@ -1,0 +1,67 @@
+﻿@page "/courseeditor"
+
+@using SEIIApp.Shared
+
+@inject Services.CourseBackendAccessService CourseService
+@inject NavigationManager NavigationManager
+@inject IJSRuntime JsRuntime
+
+<h3>Courses Editor</h3>
+
+@{ if (Courses?.Length > 0)
+    {
+        <ol>
+            @foreach (var course in Courses)
+            {
+                <li border>
+                    @(course.Name)
+                    <button class="btn btn-primary" @onclick="() => EditCourse(course)" style="margin:2px">Edit</button>
+                    <button class="btn btn-danger" @onclick="() => DeleteCourse(course)">Delete</button>
+                </li>
+            }
+        </ol>
+
+        <button @onclick="AddCourse">Add Course</button>
+    }
+    else
+    {
+        <button @onclick="AddCourse">Add Course</button>
+    }
+}
+
+
+@code {
+
+    public CourseDto[] Courses { get; set; }
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await base.OnParametersSetAsync();
+        Courses = await CourseService.GetCourseOverview();
+    }
+
+    private void EditCourse(CourseDto course)
+    {
+        NavigationManager.NavigateTo("/courseeditor/" + course.Id);
+    }
+
+    private void AddCourse()
+    {
+        NavigationManager.NavigateTo("/courseeditor/0");
+    }
+
+    async Task DeleteCourse(CourseDto course)
+    {
+
+        bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+        if (confirmed)
+        {
+            await CourseService.DeleteCourse(course.Id);
+        }
+
+
+        Courses = await CourseService.GetCourseOverview();
+
+    }
+}

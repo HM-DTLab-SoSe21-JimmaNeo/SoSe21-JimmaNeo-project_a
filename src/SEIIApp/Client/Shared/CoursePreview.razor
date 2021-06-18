@@ -1,0 +1,102 @@
+﻿@inject NavigationManager NavigationManager
+
+<div class="jumbotron border bg-@b" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem" @onmouseout="mouseOut" @onmouseover="mouseIn" @onmousedown="clicked">
+    <h2>
+        @Name
+        @if (Quiz != null && Quiz != "")
+        {
+            <img src="icons/pencil-square.svg" style="float: right; padding-left: 8px;">
+        }
+        @if (Pdf != null && Pdf != "")
+        {
+            <img src="icons/file-pdf.svg" style="float: right; padding-left: 8px;">
+        }
+        @if (Video != null && Video != "")
+        {
+            <img src="icons/file-play.svg" style="float: right; padding-left: 8px;">
+        }
+
+    </h2>
+    <p>
+        <div style="overflow: hidden; float: left; ">
+            <img src="@Img" class="rounded" width="266" height="200" style=" vertical-align: top; padding-right: 20px; object-fit: cover;  " />
+        </div>
+        <small>Description</small><br />
+        <div class="text-wrap text-truncate" style="max-height: 11.7rem; height: 11.7rem;">
+            @Desc
+        </div>
+    </p>
+    <small>Progress</small>
+
+    <div class="progress border" style="background-color: #FFFFFF">
+        <div class="progress-bar @striped @animated" role="progressbar" aria-valuenow="@progress" aria-valuemin="0" aria-valuemax="100" style="width: @progress%">@progress%</div>
+    </div>
+</div>
+
+@code {
+    /* Parameter */
+    [Parameter]
+    public int Id { get; set; }
+    [Parameter]
+    public string Name { get; set; }
+    [Parameter]
+    public string Desc { get; set; }
+    [Parameter]
+    public string Img { get; set; }
+    [Parameter]
+    public string Video { get; set; }
+    [Parameter]
+    public string Pdf { get; set; }
+    [Parameter]
+    public string Quiz { get; set; }
+    [Parameter]
+    public int progress { get; set; }
+
+
+
+    /* reaktiv machen der jumbotrons */
+
+    private string b = "white";
+    private string animated = "progress-bar";
+    private string striped = "progress-bar";
+
+    private void mouseIn()
+    {
+        b = "light-grey";
+        animated = "progress-bar-animated";
+        striped = "progress-bar-striped";
+
+    }
+
+    private void mouseOut()
+    {
+        b = "white";
+        animated = "progress-bar";
+        striped = "progress-bar";
+    }
+
+    private void clicked()
+    {
+        NavigationManager.NavigateTo("/Course/" + Id);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if ((Img == null || Img == "") && !(Video == null || Video == ""))
+        {
+            Img = "https://img.youtube.com/vi/" + Video + "/hqdefault.jpg";
+
+        }
+        else if(Img == null || Img == "")
+        {
+            Img = "http://www.bsmc.net.au/wp-content/uploads/No-image-available.jpg";
+        }
+    }
+}
+
+<style>
+
+    .jumbotron {
+        cursor: pointer;
+    }
+</style>

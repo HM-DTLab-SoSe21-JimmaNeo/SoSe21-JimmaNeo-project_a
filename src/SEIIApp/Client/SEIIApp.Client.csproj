@@ -1,0 +1,96 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'SEIIApp' ">
+    <ExternalConsole>true</ExternalConsole>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.min.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.min.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.min.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.rtl.css.map" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css" />
+    <Content Remove="C:\Users\Game\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.rtl.min.css.map" />
+    <Content Remove="Shared\ContentTypePreview.razor" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Pages\CoursePage.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.DataAnnotations.Validation" Version="3.2.0-preview2.20160.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="5.0.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="5.0.3" PrivateAssets="all" />
+    <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+    <PackageReference Include="bootstrap" Version="5.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\SEIIApp.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Shared\ContentTypePreview.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Shared\ContentTypePreview.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Components\AnswerDefComponent.razor" />
+    <None Include="Components\QuestionDefComponent.razor" />
+    <None Include="Shared\ContentTypePreview.razor" />
+    <None Include="wwwroot\Newsletter\images\.DS_Store" />
+    <None Include="wwwroot\Newsletter\images\baby.png" />
+    <None Include="wwwroot\Newsletter\images\logo.png" />
+    <None Include="wwwroot\Newsletter\images\teaser.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\..\..\..\..\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css" Condition="Exists('$(NuGetPackageRoot)bootstrap/5.0.1/contentFiles/any/any/wwwroot/css/bootstrap.min.css')">
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <NuGetPackageVersion>5.0.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Private>False</Private>
+      <Link>wwwroot\css\bootstrap\bootstrap.min.css</Link>
+    </Content>
+    <Content Include="..\..\..\..\..\.nuget\packages\bootstrap\5.0.1\contentFiles\any\any\wwwroot\css\bootstrap.min.css.map" Condition="Exists('$(NuGetPackageRoot)bootstrap/5.0.1/contentFiles/any/any/wwwroot/css/bootstrap.min.css.map')">
+      <NuGetPackageId>bootstrap</NuGetPackageId>
+      <NuGetPackageVersion>5.0.1</NuGetPackageVersion>
+      <NuGetItemType>Content</NuGetItemType>
+      <Private>False</Private>
+      <Link>wwwroot\css\bootstrap\bootstrap.min.css.map</Link>
+    </Content>
+    <Content Include="Pages\CoursePage.razor.css" />
+  </ItemGroup>
+</Project>
