@@ -4,14 +4,14 @@
 @if (Page < Quiz.Questions.Length)
 {
     <h3>@Quiz.Questions[Page].QuestionText</h3>
-
+    <div style="font-size:24px">&nbsp;</div>
     @foreach (var Answer in Quiz.Questions[Page].Answers)
     {
         <CascadingValue Value=@this>
             <AnswerButton Answer="@Answer"></AnswerButton>
         </CascadingValue>
     }
-    <div style="font-size: 12px">&nbsp;</div>
+    <div style="font-size: 24px">&nbsp;</div>
     <button class="btn btn-light btn-outline-dark btn-lg" @onclick="previousPage" disabled=@backDisabled>←</button>
     <button class="btn btn-light btn-outline-dark btn-lg float-right" @onclick="nextPage">→</button>
     <br />

@@ -152,7 +152,7 @@ namespace SEIIApp.Server.DataAccess
                                                     Text = "Die Neonatologie befasst sich mit den speziellen Problemen und deren Behandlung von Frühgeborenen und kranken Neugeborenen. In den letzten Jahrzehnten hat die Medizin im Bereich der Neonatologie immense Fortschritte gemacht: Es sind bessere Medikamente, die die Lungenreifung beschleunigen, bessere Beatmungsgeräte und Überwachungsgeräte für Herzaktionen (EKG), Sauerstoff-/Kohlendioxidaustausch (Kapnometer) sowie Sauerstoffsättigungsmesser verfügbar.Übliche Verfahren in der apparativen Diagnostik beim Früh- und Neugeborenen sind heute:<ul><li>Ultraschall, einschließlich Dopplersonographie</li><li>Röntgenuntersuchungen</li><li>Schnittbildverfahren(Computertomographie und Magnetresonanztomographie)</li></ul>",
                                                     Progress = 100,
                                                     VideoURL = "C9udNPYVKr8",
-                                                    PdfURL = "example_files/Pdf_Datei.pdf",
+                                                    PdfURL = "/test/test.pdf",
                                                     QuizId = "1"
                                                }, new Course
                                                 {
@@ -160,14 +160,14 @@ namespace SEIIApp.Server.DataAccess
                                                     Desc = "Quasi eum aliquid dignissimos vel vitae. Cupiditate quaerat id consectetur dolores id. Officiis dolor distinctio qui ipsam nesciunt aut. Ea minus voluptatem optio pariatur explicabo. Quibusdam error molestias reprehenderit distinctio. Qui sed excepturi ullam dolorem ut omnis.",
                                                     Progress = 100,
                                                     Img = "https://goafricahealth.com/wp-content/uploads/2017/10/34689294_l.jpg",
-                                                    PdfURL = "example files/Pdf Datei.pdf"
+                                                    PdfURL = "/test/test.pdf"
                                                 }, new Course
                                                 {
                                                     Name = "Cupiditate",
                                                     Desc = "Ea impedit sapiente ullam tempore sit qui deleniti. Cupiditate in sequi eius tempora nesciunt nam. Laboriosam debitis sunt debitis illum.",
                                                     Img = "https://adwonline.ae/wp-content/uploads/2020/05/Reem-Hospital-1024x683.jpg",
                                                     Progress = 50,
-                                                    PdfURL = "example files/Pdf Datei.pdf"
+                                                    PdfURL = "/test/test.pdf"
 
                                                 }, new Course
                                                 {
@@ -175,7 +175,7 @@ namespace SEIIApp.Server.DataAccess
                                                     Desc = "Quod qui explicabo molestias a et alias voluptatum. Voluptas placeat nisi quo nihil et vitae vero eius. Repellat voluptatem perspiciatis cupiditate dolore nobis et. Voluptatem in inventore ducimus iusto. Nihil porro magni quos minima quasi voluptatem.",
                                                     Progress = 0,
                                                     Img = "https://www.clipartkey.com/mpngs/m/126-1268626_black-baby-png-happy-african-babies.png",
-                                                    PdfURL = "example files/Pdf Datei.pdf"
+                                                    PdfURL = "/test/test.pdf"
                                                 }
 
                                             };

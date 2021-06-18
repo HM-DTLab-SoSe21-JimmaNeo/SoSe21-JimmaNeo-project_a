@@ -15,7 +15,7 @@
             {
                 <li border>
                     @(course.Name)
-                    <button class="btn btn-primary" @onclick="() => EditCourse(course)"style="margin:2px">Edit</button>
+                    <button class="btn btn-primary" @onclick="() => EditCourse(course)" style="margin:2px">Edit</button>
                     <button class="btn btn-danger" @onclick="() => DeleteCourse(course)">Delete</button>
                 </li>
             }
@@ -25,7 +25,7 @@
     }
     else
     {
-        <h5>Loading ...  or no courses found.</h5>
+        <button @onclick="AddCourse">Add Course</button>
     }
 }
 

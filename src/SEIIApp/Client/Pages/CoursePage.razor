@@ -31,7 +31,7 @@
                 @if (Course.PdfURL != null)
                 {
 
-                    <PDFButton Url=""></PDFButton>
+                    <PDFButton Url="@Course.PdfURL"></PDFButton>
                 }
 
 
@@ -76,13 +76,13 @@
         </div>
         @if (Course.QuizId != null)
         {
-            <QuizButton QuizId="1"></QuizButton>
+            <QuizButton QuizId="@Course.QuizId"></QuizButton>
 
         }
         @if (Course.PdfURL != null)
         {
 
-            <PDFButton Url=""></PDFButton>
+            <PDFButton Url="@Course.PdfURL"></PDFButton>
         }
 
         <FeedbackButton CourseId="@Id"></FeedbackButton>
@@ -100,6 +100,7 @@
     protected override async Task OnParametersSetAsync()
     {
         Course = await CourseService.GetCourseById(Id);
+
     }
 
 
