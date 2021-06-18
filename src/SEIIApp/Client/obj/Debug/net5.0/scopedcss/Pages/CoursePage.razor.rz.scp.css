@@ -1,0 +1,19 @@
+.videoResponsive[b-1xsc8hds6a] {
+    padding-bottom: 53.8%;
+    height: 0;
+    position: relative;
+    padding-top: 30px;
+    overflow: hidden;
+}
+
+.videoResponsive iframe[b-1xsc8hds6a],
+.videoResponsive object[b-1xsc8hds6a],
+.videoResponsive embed[b-1xsc8hds6a] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+

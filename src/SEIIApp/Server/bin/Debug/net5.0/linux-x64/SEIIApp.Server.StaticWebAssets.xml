@@ -1,0 +1,6 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="_content/Microsoft.AspNetCore.Components.Web.Extensions" Path="C:\Users\Game\.nuget\packages\microsoft.aspnetcore.components.web.extensions\5.0.0-preview9.20513.1\build\..\staticwebassets\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Game\Desktop\SEIITemp\project_a\src\SEIIApp\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Game\Desktop\SEIITemp\project_a\src\SEIIApp\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+  <ContentRoot BasePath="/" Path="C:\Users\Game\Desktop\SEIITemp\project_a\src\SEIIApp\Client\wwwroot\" />
+</StaticWebAssets>
