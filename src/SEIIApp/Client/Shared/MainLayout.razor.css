@@ -7,6 +7,7 @@
 
 .main {
     flex: 1;
+    font-family: 'Source Sans Pro', sans-serif;
 }
 .sidebar {
     background: linear-gradient( 15deg, rgb(77 173 79), rgb(4 72 4));

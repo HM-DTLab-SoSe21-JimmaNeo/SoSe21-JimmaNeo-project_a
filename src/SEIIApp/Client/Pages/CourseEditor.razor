@@ -9,42 +9,37 @@
 
 @if (Course != null)
 {
-
-    <h3>Course Editor</h3>
-
-    @using SEIIApp.Shared
-
     <h5>Course Editor</h5>
 
     <EditForm Model="@Course">
         <DataAnnotationsValidator />
 
-        <label>Course Name</label>
-        <InputText @bind-Value="Course.Name" />
+        <small>Course Name</small><br />
+        <InputText @bind-Value="Course.Name"  style="width:600px; max-width:90%"/>
         <div>&nbsp;</div>
 
-        <label>Course Description</label>
-        <InputText @bind-Value="Course.Desc" />
+        <small>Course Description</small><br />
+        <InputTextArea @bind-Value="Course.Desc"  style="width:600px; max-width:90%"/>
         <div>&nbsp;</div>
 
-        <label>Course Image (Optional)</label>
-        <InputText @bind-Value="Course.Img" />
+        <small>Course Image (Optional)</small><br />
+        <InputText @bind-Value="Course.Img"  style="width:600px; max-width:90%"/>
         <div>&nbsp;</div>
 
-        <label>Course Text (Optional, ersätzt Description)</label>
-        <InputText @bind-Value="Course.Text" />
+        <small>Course Text (Optional, ersätzt Description)</small><br />
+        <InputTextArea @bind-Value="Course.Text"  style="width:600px; max-width:90%"/>
         <div>&nbsp;</div>
 
-        <label>Video (Optiona)</label>
-        <InputText @bind-Value="Course.VideoURL" />
+        <small>Video (Optional)</small><br />
+        <InputText @bind-Value="Course.VideoURL"  style="width:600px; max-width:90%"/>
         <div>&nbsp;</div>
 
-        <label>PDF (Optiona)</label>
-        <InputText @bind-Value="Course.PdfURL" />
+        <small>PDF (Optional)</small><br />
+        <InputText @bind-Value="Course.PdfURL"  style="width:600px; max-width:90%" />
         <div>&nbsp;</div>
 
-        <label>Quiz (Optional)</label>
-        <InputText @bind-Value="Course.QuizId" />
+        <small>Quiz (Optional)</small><br />
+        <InputText @bind-Value="Course.QuizId"  style="width:600px; max-width:90%" />
 
         <ValidationSummary />
     </EditForm>
@@ -55,6 +50,7 @@ else
 {
     <h5>Course in loading (or not found) ...</h5>
 }
+
 
 @code {
 
@@ -69,7 +65,8 @@ else
         if (CourseId != 0)
         {
             Course = await CourseService.GetCourseById(CourseId);
-        } else
+        }
+        else
         {
             Course = new CourseDto();
         }
@@ -83,7 +80,7 @@ else
 
     private async void SaveCourseToBackend()
     {
-        if(Course.VideoURL != null && Course.VideoURL != "")
+        if (Course.VideoURL != null && Course.VideoURL != "")
         {
             Regex regex = new Regex(@"[^=]+($|$)");
             Course.VideoURL = regex.Match(Course.VideoURL).Value;
