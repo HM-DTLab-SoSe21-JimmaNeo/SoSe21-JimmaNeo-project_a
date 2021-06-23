@@ -20,6 +20,8 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ![](/Bildschirmfoto_2021-06-23_um_18.07.14.png)
 
+## Hilfe Funktion
+
 # Softwarearchitektur
 
 # Team und Ansprechpartner
