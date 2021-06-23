@@ -28,4 +28,22 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 # Team und Ansprechpartner
 
+**Team:**
+
+| Name | Surname |
+| ------ | ------ |
+| Afonin | Alexander |
+| Davlatova | Muharram |
+| Kallmaier | Christian |
+| Passon | Valentin |
+| Speidel | Maximilian |
+| Quynh | Chi Lai |		 			
+     		
+
+**Ansprechpartner:**
+
+| Name | Surname | Email |
+| ------ | ------ | ------ |
+| Kallmaier | Christian | c.kallmaier@hm.edu |
+
 # Anlagen
