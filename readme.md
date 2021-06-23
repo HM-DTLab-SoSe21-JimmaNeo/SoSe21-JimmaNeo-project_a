@@ -22,7 +22,7 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ## Hilfe Funktion
 
-![](/Bildschirmfoto%202021-06-23%20um%2019.09.56.png)
+![](/Bildschirmfoto%202021-06-23_um_19.09.56.png)
 
 # Softwarearchitektur
 
