@@ -18,7 +18,7 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ## Feedback Funktion
 
-https://gitlab.lrz.de/-/ide/project/seii_sose_2021/project_a/edit/master/-/Bildschirmfoto_2021-06-23_um_18.07.14.png
+![](/Bildschirmfoto_2021-06-23_um_18.07.14.png)
 
 # Softwarearchitektur
 
