@@ -18,11 +18,11 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ## Feedback Funktion
 
-![](/Bildschirmfoto_2021-06-23_um_18.07.14.png)
+![](/Bildschirmfoto_2021-06-23_um_19.21.57.png)
 
 ## Hilfe Funktion
 
-![](/Bildschirmfoto_2021-06-23_um_19.09.56.png)
+![](/Bildschirmfoto_2021-06-23_um_19.21.40.png)
 
 # Softwarearchitektur
 
