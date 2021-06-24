@@ -18,7 +18,9 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ## Sidebar
 
-Die Sidebar ermöglicht allen Nutzern eine einfache Navigation durch unsere Anwendung. Die Anwendung wird in die Bereiche Home, Help, Feedback, Edit Quiz, Edit Kurse und Newsletter unterteilt. Die jeweiligen Funktionen werden wir Ihnen in folgendem Abschnitt erläutern.
+![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.12.18.png)
+
+documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.12.18.png
 
 ## Mainpage
 
