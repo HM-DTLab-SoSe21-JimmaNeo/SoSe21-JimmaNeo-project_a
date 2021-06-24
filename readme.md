@@ -91,7 +91,7 @@ an das System übergeben werden. Hierbei ist zu beachten, dass sowohl Bilder wie
 
 ## Newsletter
 
-Den Newsletter haben wir eingeführt um die User über neuen Content zu informieren. Zu einem spätern Entwicklungszeitpunkt können User so über neue Kurinhalte, per Email, benachrichtigt werden.
+Den Newsletter haben wir eingeführt um die User über neuen Content zu informieren. Zu einem spätern Entwicklungszeitpunkt können User so über neue Kurinhalte, per Email, benachrichtigt werden. Das Newsletter-Template ist Cross-Client kompatibel und bietet somit eine optimale Darstellung über die gängigen Email-Clients.
 
 <details><summary>Click to expand</summary>
 
