@@ -61,6 +61,8 @@ an das System übergeben werden. Hierbei ist zu beachten, dass sowohl Bilder wie
 
 Den Newsletter haben wir eingeführt um die User über neuen Content zu informieren. Zu einem spätern Entwicklungszeitpunkt können User so über neue Kurinhalte, per Email, benachrichtigt werden.
 
+![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_16.28.30.png)
+
 # Softwarearchitektur
 
 Die Anwendung besteht aus zwei Komponenten:Es gibt eine Frontendapp (Webapplikation) und eine Serverapp, welche die Schnittstelle bereitstellt.
