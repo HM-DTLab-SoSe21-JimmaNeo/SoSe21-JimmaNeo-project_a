@@ -18,7 +18,9 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ## Sidebar
 
+<details><summary>Click to expand</summary>
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.12.18.png)
+</details>
 
 ## Mainpage
 
@@ -26,19 +28,31 @@ Die Mainpage ist das Herzstück unserer Anwendung. Hier können Nutzer die Kurs�
 
 Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Beschreibungen, PFS's über ein Thema informieren. Hat ein User das Gefühl er hat den Kursinhalt verstanden, kann er das dazugehörige Quiz absolvieren um seinen Wissenstand zu überprüfen. 
 
+<details><summary>Click to expand</summary>
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.54.53.png)
+</details>
 
 ## Hilfe Funktion
 
-Im Hilfemenü können Nutzer die FAQ's einsehen um Fragen zur Anwendung und ihrem Umfeld effektiv beantworten zu können. 
+Im Hilfemenü können Nutzer die FAQ's einsehen um Fragen zur Anwendung und ihrem Umfeld effektiv beantworten zu können.
+
+<details><summary>Click to expand</summary>
 
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.27.12.png)
+
+</details>
+
+
 
 ## Feedback Funktion
 
 Die Feedback-Funktion ist unser **Kernfeature**. Ziel war es einen Cross-Learning-Effekt zu erreichen um klassische Lehrer-Schüler Strukturen zu durchbrechen um lernen auf Augenhöhe zu garantieren. Das erreichen wir, indem wir dem medizinischen Fachpersonal aus Äthiopien die Möglichkeit bieten, dass in der Plattform angesiedelte Wissen zu erweitern und den generierten Content gezielt zu steuern. 
 
+<details><summary>Click to expand</summary>
+
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.28.25.png)
+
+</details>
 
 Administratoren können die abgegebenen Feedbacks abrufen um so Fragen zu beantworten oder Mängel zu beseitigen. Sollten mehrere Feedbacks zum gleichen Themengebiet auftreten können die Administraoren Course erweitern oder Fragen direkt in ein Quiz einbauen.
 
@@ -59,13 +73,21 @@ Administratoren können in unserer Webanwendung Kurse erstellen, bearbeiten und 
 
 an das System übergeben werden. Hierbei ist zu beachten, dass sowohl Bilder wie auch Videos per URL aufgerufen werden müssen. Anwender können den Kurs direkt nach der Erstellung abrufen.
 
+<details><summary>Click to expand</summary>
+
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_16.49.12.png)
+
+</details>
 
 ## Newsletter
 
 Den Newsletter haben wir eingeführt um die User über neuen Content zu informieren. Zu einem spätern Entwicklungszeitpunkt können User so über neue Kurinhalte, per Email, benachrichtigt werden.
 
+<details><summary>Click to expand</summary>
+
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_16.28.30.png)
+
+</details>
 
 # Softwarearchitektur
 
@@ -95,7 +117,11 @@ Die Anwendung besteht aus zwei Komponenten:Es gibt eine Frontendapp (Webapplikat
 
 ### PressRelease
 
+https://gitlab.lrz.de/seii_sose_2021/project_a/-/blob/master/documentation/LMU_TEAM_A_PR_Version_1.2.pdf
+
 ### FAQ's
+
+https://gitlab.lrz.de/seii_sose_2021/project_a/-/blob/master/documentation/FAQ_Team_a_aLive.pdf
 
 ### Storyboard
 
