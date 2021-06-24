@@ -91,10 +91,10 @@ Die Anwendung besteht aus zwei Komponenten:Es gibt eine Frontendapp (Webapplikat
 
 # Anlagen
 
-## PressRelease
+### PressRelease
 
-## FAQ's
+### FAQ's
 
-## Storyboard
+### Storyboard
 
 https://gitlab.lrz.de/-/ide/project/seii_sose_2021/project_a/edit/master/-/documentation/storyboard.jpg
