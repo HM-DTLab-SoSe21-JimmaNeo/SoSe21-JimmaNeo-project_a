@@ -16,6 +16,10 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 # Anwendungsbeschreibung
 
+## Sidebar
+
+Die Sidebar ermöglicht allen Nutzern eine einfache Navigation durch unsere Anwendung. Die Anwendung wird in die Bereiche Home, Help, Feedback, Edit Quiz, Edit Kurse und Newsletter unterteilt. Die jeweiligen Funktionen werden wir Ihnen in folgendem Abschnitt erläutern.
+
 ## Mainpage
 
 
@@ -36,10 +40,6 @@ Administratoren können die abgegebenen Feedbacks abrufen um so Fragen zu beantw
 
 
 
-## Quizerstellung
-
-
-
 ## Edit Quiz Funktion
 
 ## Edit Course Funktion
@@ -53,7 +53,7 @@ Administratoren können auf unserer Webseite Kurse erstellen, bearbeiten und lö
 - PDF's
 - und ein Quiz
 
-an das System übergeben werden.
+an das System übergeben werden. Hierbei ist zu beachten, dass sowohl Bilder wie auch Videos per URL aufgerufen werden müssen. Anwender können den Kurs direkt nach der Erstellung abrufen.
 
 ## Newsletter
 
