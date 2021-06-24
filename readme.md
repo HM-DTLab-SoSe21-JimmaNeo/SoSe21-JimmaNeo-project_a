@@ -57,6 +57,8 @@ Administratoren können in unserer Webanwendung Kurse erstellen, bearbeiten und 
 
 an das System übergeben werden. Hierbei ist zu beachten, dass sowohl Bilder wie auch Videos per URL aufgerufen werden müssen. Anwender können den Kurs direkt nach der Erstellung abrufen.
 
+![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_16.49.12.png)
+
 ## Newsletter
 
 Den Newsletter haben wir eingeführt um die User über neuen Content zu informieren. Zu einem spätern Entwicklungszeitpunkt können User so über neue Kurinhalte, per Email, benachrichtigt werden.
