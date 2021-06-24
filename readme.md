@@ -26,6 +26,12 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ## Mainpage
 
+<details><summary>Click to expand</summary>
+
+![](/documentation/Screenshots/mainpage_alive.PNG)
+
+</details>
+
 Die Mainpage ist das Herzstück unserer Anwendung. Hier können Nutzer die Kursübersicht und den Fortschritt bei den jeweiligen Kursen einsehen.
 
 Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Beschreibungen, PFS's über ein Thema informieren. Hat ein User das Gefühl er hat den Kursinhalt verstanden, kann er das dazugehörige Quiz absolvieren um seinen Wissenstand zu überprüfen. 
