@@ -30,7 +30,7 @@ Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Be
 
 Im Hilfemenü können Nutzer die FAQ's einsehen um Fragen zur Anwendung und ihrem Umfeld effektiv beantworten zu können. 
 
-![](/Bildschirmfoto_2021-06-23_um_19.21.40.png)
+![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.27.12.png)
 
 ## Feedback Funktion
 
