@@ -26,6 +26,8 @@ Die Mainpage ist das Herzstück unserer Anwendung. Hier können Nutzer die Kurs�
 
 Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Beschreibungen, PFS's über ein Thema informieren. Hat ein User das Gefühl er hat den Kursinhalt verstanden, kann er das dazugehörige Quiz absolvieren um seinen Wissenstand zu überprüfen. 
 
+![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.54.53.png)
+
 ## Hilfe Funktion
 
 Im Hilfemenü können Nutzer die FAQ's einsehen um Fragen zur Anwendung und ihrem Umfeld effektiv beantworten zu können. 
