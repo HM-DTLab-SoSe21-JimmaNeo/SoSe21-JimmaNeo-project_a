@@ -26,10 +26,14 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ## Feedback Funktion
 
-Die Feedback-Funktion ist unser Kernfeature. Ziel war es einen Cross-Learning-Effekt zu erreichen um klassische Lehrer-Schüler Strukturen zu durchbrechen. Das erreichen wir, indem wir dem medizinischen Fachpersonal aus Äthiopien die Möglichkeit bieten, dass in der Plattform angesiedelte Wissen zu erreichen und den generierten Content gezielt zu steuern. 
+Die Feedback-Funktion ist unser **Kernfeature**. Ziel war es einen Cross-Learning-Effekt zu erreichen um klassische Lehrer-Schüler Strukturen zu durchbrechen. Das erreichen wir, indem wir dem medizinischen Fachpersonal aus Äthiopien die Möglichkeit bieten, dass in der Plattform angesiedelte Wissen zu erreichen und den generierten Content gezielt zu steuern. 
 
 
 ![](/Bildschirmfoto_2021-06-23_um_19.21.57.png)
+
+Administratoren können auf die abgegebenen Feedbacks abrufen um in Kontakt zu treten.
+
+
 
 
 ## Quizerstellung
