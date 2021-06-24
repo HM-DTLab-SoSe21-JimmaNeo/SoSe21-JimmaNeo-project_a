@@ -1,0 +1,49 @@
+﻿@page "/"
+@using SEIIApp.Shared
+
+@inject Services.CourseBackendAccessService CourseService
+@inject Services.FeedbackBackendAccessService FeedbackService
+
+<h1 style="font-size: 2.5em; font-family: 'Ubuntu', sans-serif; font-weight:lighter;">
+    Course overview
+</h1>
+
+@if (Courses?.Length > 0)
+{
+    @for (var i = 0; i < Courses.Length; i += 3)
+    {
+        <div class="row">
+            @for (var j = i; j < i + 3 && j < Courses.Length; j++)
+            {
+                <div class="col-sm-4">
+                    <CoursePreview Id="@Courses[j].Id" Name="@Courses[j].Name" Desc="@Courses[j].Desc" Img="@Courses[j].Img" Video="@Courses[j].VideoURL" Pdf="@Courses[j].PdfURL" Quiz="@Courses[j].QuizId" progress="@Courses[j].Progress" />
+                </div>
+            }
+        </div>
+    }
+
+}
+else
+{
+    <div class="spinner-border text-success"></div>
+}
+
+
+@code {
+
+    public CourseDto[] Courses { get; set; }
+    public FeedbackDto[] Feedback { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        Courses = await CourseService.GetCourseOverview();
+        Feedback = await FeedbackService.GetFeedbackOverview();
+    }
+
+
+    protected override async Task OnInitializedAsync()
+    {
+
+    }
+
+}

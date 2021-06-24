@@ -1,0 +1,24 @@
+
+{
+    "region" : "us-east-2",
+    "configuration" : "Debug",
+    "framework"     : "net5.0",
+    "self-contained" : true,
+    "application"    : "SEIIAppServer",
+    "environment"    : "testesttest",
+    "enable-xray"    : false,
+    "enhanced-health-type" : "basic",
+    "additional-options"   : "\"aws:autoscaling:launchconfiguration,SecurityGroups\"=\"sg-e920ee9e\";\"aws:ec2:vpc,Subnets\"=\"subnet-00b5ea4c\"",
+    "proxy-server"         : "nginx",
+    "solution-stack"       : "64bit Windows Server Core 2019 v2.6.6 running IIS 10.0",
+    "environment-type"     : "SingleInstance",
+    "cname"                : "testesttest",
+    "instance-type"        : "t3a.medium",
+    "key-pair"             : "key123",
+    "instance-profile"     : "aws-elasticbeanstalk-ec2-role",
+    "service-role"         : "aws-elasticbeanstalk-service-role",
+    "profile"              : "passon",
+    "health-check-url"     : "/",
+    "iis-website"          : "Default Web Site",
+    "app-path"             : "/"
+}

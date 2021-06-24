@@ -1,0 +1,84 @@
+﻿@using System.Timers
+@inject Services.FeedbackBackendAccessService FeedbackService
+
+<div class="top-row pl-4 navbar navbar-dark">
+    <a class="navbar-brand" href="">aLive</a>
+    <button class="navbar-toggler" @onclick="ToggleNavMenu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+    <ul class="nav flex-column">
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="/faq">
+                <span class="oi oi-question-mark" aria-hidden="true"></span> Help
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="feedback">
+                <span class="oi oi-warning" aria-hidden="true"></span> Feedback
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="quizdef">
+                <span class="oi oi-pencil" aria-hidden="true"></span> Edit Quiz
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="courseeditor">
+                <span class="oi oi-pencil" aria-hidden="true"></span> Edit Course
+            </NavLink>
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" href="nl">
+                <span class="oi oi-bullhorn" aria-hidden="true"></span> Newsletter
+            </NavLink>
+        </li>
+        @if (Feedback != null && Feedback.Length != 0)
+        {
+          
+                <li class="nav-item px-3">
+                    <NavLink class="nav-link" href="readfeedback">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="rgb(255,10,10)" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                            <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                        </svg>
+                        <sub style=" font-size: 16px; text-align:left; margin-bottom:-9px;margin-left:-2px!important">@Feedback.Length</sub>&nbsp;&nbsp;neues Feedback
+                    </NavLink>
+                </li>
+         
+        
+        }
+        </ul>
+    </div>
+
+    @code {
+        private bool collapseNavMenu = true;
+
+        private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+        private void ToggleNavMenu()
+        {
+            collapseNavMenu = !collapseNavMenu;
+        }
+
+        public FeedbackDto[] Feedback { get; set; }
+        public int NewFeedback { get; set; }
+
+        protected override async Task OnParametersSetAsync()
+        {
+
+
+
+            await base.OnParametersSetAsync();
+            Feedback = await FeedbackService.GetFeedbackOverview();
+
+        }
+
+
+    }

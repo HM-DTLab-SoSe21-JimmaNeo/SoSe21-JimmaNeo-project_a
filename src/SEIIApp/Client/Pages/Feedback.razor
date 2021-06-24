@@ -1,0 +1,135 @@
+﻿@page "/feedback"
+@page "/feedback/{CourseId:int}"
+
+@using SEIIApp.Shared
+
+@inject NavigationManager navManager
+@inject Services.CourseBackendAccessService CourseService
+@inject Services.FeedbackBackendAccessService FeedbackService
+@inject IJSRuntime JsRuntime
+
+<div class="row justify-content-md-center">
+
+    @if (CourseId == null)
+    {
+        <div class="col-sm-12">
+            <h1 style="font-size: 2.5em; font-family: 'Ubuntu', sans-serif; font-weight:lighter; padding-top:0.75%; padding-bottom:2%">Feedback: Allgemein</h1>
+        </div>
+        <div class="col-sm-3">
+
+            <label for="dropdown-selection">Kategorie?</label>            
+            <select class="form-control" @bind="@message.Category" id="dropdown-selection" style="color: black; width:100%">
+                <option value="" disabled selected>Kategorie auswählen</option>
+
+                <option value="Weitere Kursinhalte erwünscht">Weitere Kursinhalte erwünscht</option>
+                <option value="Weitere Funktionen erwünscht">Weitere Funktionen erwünscht</option>
+                <option value="Ich habe einen Fehler entdeckt">Ich habe einen Fehler entdeckt</option>
+                <option value="Andere Kategorie">Andere Kategorie</option>
+
+
+            </select>
+
+
+        </div>
+
+    }
+    else if (Course != null)
+    {
+    <div class="col-sm-12">
+        <h1 style="font-size: 2.5em; font-family: 'Ubuntu', sans-serif; font-weight:lighter; padding-top:0.75%; padding-bottom:2%">Feedback: "@Course.Name"</h1>
+
+    </div>
+
+    <div class="col-sm-3">
+
+        <label for="dropdown-selection">Kategorie?</label>
+        <select class="form-control" @bind="@message.Category" id="dropdown-selection" style="color: black; width:100%">
+            <option value="" disabled selected>Kategorie auswählen</option>
+
+            <option value="Auf einzelne Lerninhalte wurde nicht ausreichend eingegangen">Auf einzelne Lerninhalte wurde nicht ausreichend eingegangen</option>
+            <option value="Bei uns wir es anders gemach">Bei uns wir es anders gemacht</option>
+            <option value="Uns fehlt die Ausstattung">Uns fehlt die Ausstattung</option>
+            <option value="Andere Kategorie">Andere Kategorie</option>
+
+
+        </select>
+        </div>
+    }
+
+    <div class="col-sm-9">
+        <div class="jumbotron border bg-light-grey" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); overflow: hidden; padding-top: 1rem; padding-bottom: 1rem">
+
+
+            <div style="padding:20px;">
+                <EditForm EditContext="@context">
+                    <DataAnnotationsValidator /><ValidationSummary />
+                    <label for="name">Name: </label>
+                    <InputText id="name" placeholder="Name eingeben" @bind-Value="message.Name" />&nbsp;&nbsp;&nbsp;
+                    <label for="email">Email: </label>
+                    <InputText id="email" placeholder="Email eingeben" @bind-Value="message.Email" />
+
+                    <div style="font-size:12px">&nbsp;</div>
+                    <div class="form-group">
+                        <label for="Textarea">Beschreibe dein Problem</label>
+                        <InputTextArea id="Textarea" @bind-Value="message.Message" style="width:100%"></InputTextArea>
+                    </div>
+                </EditForm>
+                <label for="inputGroupFile02">Datei hinzuf&uuml;gen?</label>
+                <div class="input-group mb-3">
+
+                    <input type="file" class="form-control" id="inputGroupFile02">
+                    <label class="input-group-text" for="inputGroupiFle02">Upload</label>
+                </div>
+            </div>
+
+        </div>
+        <div style="font-size:8px">&nbsp;</div>
+        <button style="float:right;" type="button" class="btn btn-outline-danger btn-lg" @onclick="sendFeedback">Senden</button>
+    </div>
+
+
+</div>
+
+
+@code {
+    [Parameter]
+    public int? CourseId { get; set; }
+
+
+    public FeedbackDto message = new FeedbackDto();
+
+    private EditContext context { get; set; }
+
+    async Task sendFeedback()
+    {
+        if (context.Validate())
+        {
+            Console.WriteLine(message.Message);
+            bool confirmed = await JsRuntime.InvokeAsync<bool>("confirm", "Are you sure?");
+            if (confirmed)
+            {
+                await FeedbackService.AddOrUpdateFeedback(message);
+                navManager.NavigateTo(CourseId != null ? "/Course/" + CourseId : "/", true);
+
+            }
+        }
+    }
+
+    private void OnSubmit(EditContext context)
+    {
+    }
+
+    private CourseDto Course;
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+        context = new EditContext(message);
+        if (CourseId != null)
+        {
+            Course = await CourseService.GetCourseById((int)CourseId);
+            message.CourseName = Course.Name;
+        }
+
+    }
+}

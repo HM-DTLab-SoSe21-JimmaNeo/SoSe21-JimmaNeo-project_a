@@ -1,0 +1,43 @@
+﻿@inject IJSRuntime jsRuntime
+
+<button type="button" class="btn btn-outline-@color" @onclick="CopyTextToClipboard">
+    @if (pressed)
+    {
+
+        <div>&#128203; &#10004;</div>
+    }
+    else
+    {
+        <div>
+            &#128203;
+        </div>
+    }
+</button>
+
+
+
+
+@code {
+    [Parameter] public string Text { get; set; }
+    private string color = "dark";
+
+    private bool pressed = false;
+
+    private void CopyTextToClipboard()
+    {
+
+        pressed = true;
+        color = "success";
+
+        // Writing to the clipboard may be denied, so you must handle the exception
+        try
+        {
+            ((IJSInProcessRuntime)jsRuntime).Invoke<bool>("navigator.clipboard.writeText", Text);
+
+        }
+        catch
+        {
+            Console.WriteLine("Cannot write text to clipboard");
+        }
+    }
+}

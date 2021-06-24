@@ -1,0 +1,47 @@
+﻿@using SEIIApp.Shared
+
+
+<DataAnnotationsValidator />
+
+<InputText placeholder="Antwort eingeben" @bind-Value="AnswerDto.AnswerText" />
+
+<button type="button" class="btn btn-@Color" @onmousedown="clicked" style="text-align: left;">@Text</button>
+
+<ValidationSummary />
+@code {
+    [CascadingParameter]
+    public QuestionDefComponent ParentComponent { get; set; }
+
+    [Parameter]
+    public AnswerDto AnswerDto { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+        Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
+        Color = AnswerDto.IsCorrect ? "info" : "warning";
+
+        if (ParentComponent == null)
+            throw new Exception("Must be used within MyParentComponent");
+        ParentComponent.AddChild(this);
+    }
+
+    public void refresh()
+    {
+        Color = AnswerDto.IsCorrect ? "info" : "warning";
+        Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
+        StateHasChanged();
+    }
+
+    public String Text = "loading";
+    public String Color = "light";
+
+
+    private void clicked()
+    {
+        AnswerDto.IsCorrect = AnswerDto.IsCorrect ? false : true;
+        Color = AnswerDto.IsCorrect ? "info" : "warning";
+        Text = AnswerDto.IsCorrect ? "richtig" : "falsch";
+    }
+
+}

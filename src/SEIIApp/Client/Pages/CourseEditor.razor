@@ -1,0 +1,128 @@
+﻿@page "/courseeditor/{CourseId:int}"
+
+@using System.Text.RegularExpressions
+@using SEIIApp.Shared
+@using SEIIApp.Client.Components
+
+@inject NavigationManager NavManager
+@inject Services.CourseBackendAccessService CourseService
+@inject Services.QuizBackendAccessService QuizService
+
+@if (Course != null && Quizzes != null)
+{
+    <h5>Course Editor</h5>
+    <div>&nbsp;</div>
+
+    <div style="width:600px; max-width:100%">
+        <EditForm EditContext="@context">
+            <DataAnnotationsValidator />
+
+            <small>Course Name</small><br />
+            <InputText @bind-Value="Course.Name" style="width:100%" />
+            <div>&nbsp;</div>
+
+            <small>Course Description</small><br />
+            <InputTextArea @bind-Value="Course.Desc" style="width:100%" />
+            <div>&nbsp;</div>
+
+            <small>Course Image (Optional)</small><br />
+            <InputText @bind-Value="Course.Img" style="width:100%" />
+            <div>&nbsp;</div>
+
+            <small>Course Text (Optional, ersätzt Description)</small><br />
+            <InputTextArea @bind-Value="Course.Text" style="width:100%" />
+            <div>&nbsp;</div>
+
+            <small>Video (Optional)</small><br />
+            <InputText @bind-Value="Course.VideoURL" style="width:100%" />
+            <div>&nbsp;</div>
+
+            <small>PDF (Optional)</small><br />
+            <InputText @bind-Value="Course.PdfURL" style="width:100%" />
+            <div>&nbsp;</div>
+
+            <small>Quiz (Optional)</small><br />
+            <select class="form-control" @bind="@Course.QuizId" style="color: black; width:100%">
+                <option value="" disabled selected>Quiz auswählen</option>
+                @foreach (QuizDto quiz in Quizzes)
+                {
+                    <option value="@quiz.Id.ToString()">@quiz.Name</option>
+                }
+                <option value="">kein Quiz</option>
+            </select>
+
+
+            <ValidationSummary />
+        </EditForm>
+        <div style="font-size:24px">&nbsp;</div>
+        <div style="text-align:center">
+            <button class="btn" @onclick="SaveCourseToBackend">
+                <svg xmlns="http://www.w3.org/2000/svg" height="64px" viewBox="0 0 32 32" width="64px" fill="#000000">
+                    <path d="M0 0h24v24H0V0z" fill="none" />
+                    <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm2 16H5V5h11.17L19 7.83V19zm-7-7c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3zM6 6h9v4H6z" />
+                </svg>
+            </button>
+        </div>
+    </div>
+}
+else
+{
+    <h5>Course in loading (or not found) ...</h5>
+}
+
+<style>
+    small {
+        font-size: 15px;
+    }
+</style>
+
+@code {
+
+
+    [Parameter]
+    public int CourseId { get; set; }
+
+    public CourseDto Course { get; set; }
+
+    public QuizDto[] Quizzes { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (CourseId != 0)
+        {
+            Course = await CourseService.GetCourseById(CourseId);
+        }
+        else
+        {
+            Course = new CourseDto();
+        }
+        Quizzes = await QuizService.GetQuizOverview();
+        context = new EditContext(Course);
+    }
+
+    private EditContext context { get; set; }
+
+
+    private void OnSubmit()
+    {
+
+    }
+
+    private async void SaveCourseToBackend()
+    {
+        if (context.Validate())
+        {
+            if (Course.VideoURL != null && Course.VideoURL != "")
+            {
+                Regex regex = new Regex(@"[^=]+($|$)");
+                Course.VideoURL = regex.Match(Course.VideoURL).Value;
+
+            }
+            await CourseService.AddOrUpdateCourse(Course);
+            NavManager.NavigateTo("/courseeditor");
+        }
+
+
+    }
+
+}

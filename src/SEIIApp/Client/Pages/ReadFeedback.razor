@@ -1,0 +1,33 @@
+﻿@page "/readfeedback"
+@inject Services.FeedbackBackendAccessService FeedbackService
+
+<h3>ReadFeedback</h3>
+
+@if (Feedback != null && Feedback.Length != 0)
+{
+    <ol>
+        @foreach (FeedbackDto feedback in Feedback)
+        {
+            <li><a href="/readfeedback/@feedback.Id" style="margin:2px">Feedback von: @feedback.Name</a></li>
+        }
+    </ol>
+
+}
+else
+{
+   
+        <span>kein Feedback vorhanden</span>
+   
+}
+
+@code {
+    public FeedbackDto[] Feedback { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+        await base.OnParametersSetAsync();
+        Feedback = await FeedbackService.GetFeedbackOverview();
+
+    }
+}
