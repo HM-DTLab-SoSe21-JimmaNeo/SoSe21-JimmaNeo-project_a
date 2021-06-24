@@ -22,6 +22,11 @@ Die Sidebar ermöglicht allen Nutzern eine einfache Navigation durch unsere Anwe
 
 ## Mainpage
 
+Die Mainpage ist das Herzstück unserer Anwendung. Hier können Nutzer die Kursübersicht und den Fortschritt bei den jeweiligen Kursen einsehen.
+
+
+Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Beschreibungen, PFS's über ein Thema informieren. Hat ein User das Gefühl er hat den Kursinhalt verstanden, kann er das dazugehörige Quiz absolvieren um seinen Wissenstand zu überprüfen. 
+
 
 ## Hilfe Funktion
 
@@ -44,7 +49,7 @@ Administratoren können die abgegebenen Feedbacks abrufen um so Fragen zu beantw
 
 ## Edit Course Funktion
 
-Administratoren können auf unserer Webseite Kurse erstellen, bearbeiten und löschen. Bei der Erstellung und Bearbeitung können:
+Administratoren können in unserer Webanwendung Kurse erstellen, bearbeiten und löschen. Bei der Erstellung und Bearbeitung können:
 
 - Kursname
 - Kursbeschreibung
