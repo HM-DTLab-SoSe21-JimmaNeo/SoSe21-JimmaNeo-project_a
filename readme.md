@@ -24,26 +24,21 @@ Die Sidebar ermöglicht allen Nutzern eine einfache Navigation durch unsere Anwe
 
 Die Mainpage ist das Herzstück unserer Anwendung. Hier können Nutzer die Kursübersicht und den Fortschritt bei den jeweiligen Kursen einsehen.
 
-
 Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Beschreibungen, PFS's über ein Thema informieren. Hat ein User das Gefühl er hat den Kursinhalt verstanden, kann er das dazugehörige Quiz absolvieren um seinen Wissenstand zu überprüfen. 
-
 
 ## Hilfe Funktion
 
-![](/Bildschirmfoto_2021-06-23_um_19.21.40.png)
+Im Hilfemenü können Nutzer die FAQ's einsehen um Fragen zur Anwendung und ihrem Umfeld effektiv beantworten zu können. 
 
+![](/Bildschirmfoto_2021-06-23_um_19.21.40.png)
 
 ## Feedback Funktion
 
 Die Feedback-Funktion ist unser **Kernfeature**. Ziel war es einen Cross-Learning-Effekt zu erreichen um klassische Lehrer-Schüler Strukturen zu durchbrechen um lernen auf Augenhöhe zu garantieren. Das erreichen wir, indem wir dem medizinischen Fachpersonal aus Äthiopien die Möglichkeit bieten, dass in der Plattform angesiedelte Wissen zu erweitern und den generierten Content gezielt zu steuern. 
 
-
 ![](/Bildschirmfoto_2021-06-23_um_19.21.57.png)
 
 Administratoren können die abgegebenen Feedbacks abrufen um so Fragen zu beantworten oder Mängel zu beseitigen. Sollten mehrere Feedbacks zum gleichen Themengebiet auftreten können die Administraoren Course erweitern oder Fragen direkt in ein Quiz einbauen.
-
-
-
 
 ## Edit Quiz Funktion
 
@@ -66,17 +61,12 @@ an das System übergeben werden. Hierbei ist zu beachten, dass sowohl Bilder wie
 
 Den Newsletter haben wir eingeführt um die User über neuen Content zu informieren. Zu einem spätern Entwicklungszeitpunkt können User so über neue Kurinhalte, per Email, benachrichtigt werden.
 
-
-
-
-
 # Softwarearchitektur
 
 Die Anwendung besteht aus zwei Komponenten:Es gibt eine Frontendapp (Webapplikation) und eine Serverapp, welche die Schnittstelle bereitstellt.
 
 Servicethema:
 Am Frontend gibt es <<Beispiel Services>>, die genutzt werden können.
-
 
 Welche Services stellen welche Funktionalität dar?:
 
@@ -93,7 +83,6 @@ Welche Services stellen welche Funktionalität dar?:
 | Speidel | Maximilian |
 | Quynh | Chi Lai |		 			
      		
-
 **Ansprechpartner:**
 
 | Name | Surname | Email |
