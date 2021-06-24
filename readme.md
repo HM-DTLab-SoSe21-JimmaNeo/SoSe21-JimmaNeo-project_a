@@ -91,4 +91,4 @@ Die Anwendung besteht aus zwei Komponenten:Es gibt eine Frontendapp (Webapplikat
 
 # Anlagen
 
-[](https://gitlab.lrz.de/seii_sose_2021/project_a/-/blob/master/documentation/storyboard.jpg)
+[](/documentation/storyboard.jpg)
