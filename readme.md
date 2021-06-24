@@ -101,7 +101,20 @@ Den Newsletter haben wir eingeführt um die User über neuen Content zu informie
 
 # Softwarearchitektur
 
-Die Anwendung besteht aus zwei Komponenten:Es gibt eine Frontendapp (Webapplikation) und eine Serverapp, welche die Schnittstelle bereitstellt.
+Allgemein handelt es sich um eine Blazer Single Page Applikation (SPA).
+Die Anwendung setzt sich aus zwei unabhängigen Schichten zusammen, einerseits das Frontend, welches als Webanwendung bereitgestellt wird, andererseits das serverseitige Backend. 
+Das Zusammenspiel der beiden Schichten basiert auf der REST-API Technologie.
+
+**Frontend:**
+
+Hier werden Razorkomponenten verwendet, um einen dynamischen HTML-Code zu generieren. Um eine ansprechende Optik zu gewährleisten, wurde auf Bootstrap zurückgegriffen. Zusätzlich wurden interaktive Elemente mittels C#, aber auch JavaScript umgesetzt.
+
+**Backend:**
+
+Der Sourcecode ist in C# geschrieben worden. Des weiteren sind Datenbankzugriffe möglich, wobei das C#-Framework LINQ die Geschäftslogik übernimmt.
+
+
+
 
 
 # Team und Ansprechpartner
