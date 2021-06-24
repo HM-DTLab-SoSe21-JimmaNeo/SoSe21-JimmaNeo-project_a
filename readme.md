@@ -36,7 +36,7 @@ Im Hilfemenü können Nutzer die FAQ's einsehen um Fragen zur Anwendung und ihre
 
 Die Feedback-Funktion ist unser **Kernfeature**. Ziel war es einen Cross-Learning-Effekt zu erreichen um klassische Lehrer-Schüler Strukturen zu durchbrechen um lernen auf Augenhöhe zu garantieren. Das erreichen wir, indem wir dem medizinischen Fachpersonal aus Äthiopien die Möglichkeit bieten, dass in der Plattform angesiedelte Wissen zu erweitern und den generierten Content gezielt zu steuern. 
 
-![](/Bildschirmfoto_2021-06-23_um_19.21.57.png)
+![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.28.25.png)
 
 Administratoren können die abgegebenen Feedbacks abrufen um so Fragen zu beantworten oder Mängel zu beseitigen. Sollten mehrere Feedbacks zum gleichen Themengebiet auftreten können die Administraoren Course erweitern oder Fragen direkt in ein Quiz einbauen.
 
