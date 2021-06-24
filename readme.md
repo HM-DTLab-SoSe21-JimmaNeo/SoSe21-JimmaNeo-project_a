@@ -16,13 +16,29 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 # Anwendungsbeschreibung
 
-## Feedback Funktion
+## Mainpage
 
-![](/Bildschirmfoto_2021-06-23_um_19.21.57.png)
 
 ## Hilfe Funktion
 
 ![](/Bildschirmfoto_2021-06-23_um_19.21.40.png)
+
+
+## Feedback Funktion
+
+Die Feedback-Funktion ist unser Kernfeature. Ziel war es einen Cross-Learning-Effekt zu erreichen um klassische Lehrer-Schüler Strukturen zu durchbrechen. Das erreichen wir, indem wir dem medizinischen Fachpersonal aus Äthiopien die Möglichkeit bieten, dass in der Plattform angesiedelte Wissen zu erreichen und den generierten Content gezielt zu steuern. 
+
+
+![](/Bildschirmfoto_2021-06-23_um_19.21.57.png)
+
+
+## Quizerstellung
+
+## Edit Quiz Funktion
+
+## Edit Course Funktion
+
+## Newsletter
 
 # Softwarearchitektur
 
