@@ -4,7 +4,7 @@ Heute hat aLive Inc. eine E-Learning Plattform angekündigt, welche die Zusammen
 
 Angetrieben durch das Motto „Leben zu retten“ ist es den Ärzten aus München durch die Corona-Pandemie verwehrt Schulungen und Trainings in Äthiopien zu begleiten, ohne das Leben anderer zu gefährden. Dazu sagte Dr. med. Tobias Reicherzer Facharzt für Kinder- und Jugendmedizin, Neonatologe und Funktionsoberarzt des LMU Klinikums:
 
-> „Schade, dass die Schulungen in Jimma derzeit nicht stattfinden können. Es wäre toll, wenn es hierfür eine Alternative dafür geben würde.“
+> „Schade, dass die Schulungen in Jimma derzeit nicht stattfinden können. Es wäre toll, wenn es eine Alternative darfür geben würde.“
 
 Die Plattform aLive soll dafür einen adäquaten Ersatz bieten. Unterschiedlichste Gamification-Lösungen schaffen in einer Learning-Path Roadmap bestehend aus Lerneinheiten ein motivierendes Umfeld. Durch die Kombination von Präsentationsmöglichkeiten (Frage-Antwort-Schemata, Fallstudien und Videocontent) wird das medizinische Personal in Äthiopien gezielt an Themenschwerpunkte herangeführt, welche dann mit Hilfe von Online-Sessions abgerundet werden.
 
