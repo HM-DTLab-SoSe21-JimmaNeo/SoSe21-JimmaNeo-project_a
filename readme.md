@@ -20,8 +20,6 @@ Umgesetzt wird das Projekt mittels einer webbasierten Plattformlösung, welche a
 
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.12.18.png)
 
-documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.12.18.png
-
 ## Mainpage
 
 Die Mainpage ist das Herzstück unserer Anwendung. Hier können Nutzer die Kursübersicht und den Fortschritt bei den jeweiligen Kursen einsehen.
@@ -92,3 +90,5 @@ Die Anwendung besteht aus zwei Komponenten:Es gibt eine Frontendapp (Webapplikat
 | Kallmaier | Christian | c.kallmaier@hm.edu |
 
 # Anlagen
+
+[](https://gitlab.lrz.de/seii_sose_2021/project_a/-/blob/master/documentation/storyboard.jpg)
