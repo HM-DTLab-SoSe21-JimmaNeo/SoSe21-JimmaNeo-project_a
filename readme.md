@@ -50,7 +50,7 @@ Die Mainpage ist das Herzstück unserer Anwendung. Hier können Nutzer die Kurs�
 
 </details>
 
-Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Beschreibungen, PFS's über ein Thema informieren. Hat ein User das Gefühl er hat den Kursinhalt verstanden, kann er das dazugehörige Quiz absolvieren um seinen Wissenstand zu überprüfen. 
+Außerdem werden hier die Kurse absolviert. Nutzer können sich durch Videos, Beschreibungen, PDF's über ein Thema informieren. Hat ein User das Gefühl er hat den Kursinhalt verstanden, kann er das dazugehörige Quiz absolvieren um seinen Wissenstand zu überprüfen. 
 
 
 <details><summary>Click to expand</summary>
