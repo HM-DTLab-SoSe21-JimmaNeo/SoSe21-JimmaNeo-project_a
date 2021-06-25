@@ -1,6 +1,6 @@
 # PressRelease
 
-Heute hat aLive Inc. eine E-Learning Plattform angekündigt, welche die Zusammenarbeit Äthiopischer und deutscher Neonatologen vereinfacht. Der Fokus liegt hierbei vor allem darauf, Behandlungsmöglichkeiten und die Versorgung von Neugeborenen zu verbessern.
+Heute hat aLive Inc. eine E-Learning Plattform angekündigt, welche die Zusammenarbeit äthiopischer und deutscher Neonatologen vereinfacht. Der Fokus liegt hierbei vor allem darauf, Behandlungsmöglichkeiten und die Versorgung von Neugeborenen zu verbessern.
 
 Angetrieben durch das Motto „Leben zu retten“ ist es den Ärzten aus München durch die Corona-Pandemie verwehrt Schulungen und Trainings in Äthiopien zu begleiten, ohne das Leben anderer zu gefährden. Dazu sagte Dr. med. Tobias Reicherzer Facharzt für Kinder- und Jugendmedizin, Neonatologe und Funktionsoberarzt des LMU Klinikums:
 
