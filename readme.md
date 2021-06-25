@@ -123,7 +123,7 @@ Den Newsletter haben wir eingeführt um die User über neuen Content zu informie
 
 # Softwarearchitektur
 
-Allgemein handelt es sich um eine Blazer Single Page Applikation (SPA).
+Allgemein handelt es sich um eine Blazor Single Page Applikation (SPA).
 Die Anwendung setzt sich aus zwei unabhängigen Schichten zusammen, einerseits das Frontend, welches als Webanwendung bereitgestellt wird, andererseits das serverseitige Backend. 
 Das Zusammenspiel der beiden Schichten basiert auf der REST-API Technologie.
 
