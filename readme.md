@@ -1,6 +1,6 @@
 # Team aLive
 
-Unser Ziel war es durch die Kombination von unterschiedlichen Präsentationsmöglichkeiten das medizinische Fachpersonal in Äthiopien gezielt an Themenschwerpunkte herzuführen, welche dann mit Hilfe von Online-Sessions abgerundet werden. Den Ärtzen in Äthiopien soll die Möglichkeit gegeben werden den Content der Webanwendung zu steuern, hierzu möchten wir eine Feedback-Funktion implementieren.
+Unser Ziel war es durch die Kombination von unterschiedlichen Präsentationsmöglichkeiten das medizinische Fachpersonal in Äthiopien gezielt an Themenschwerpunkte heranzuführen, welche dann mit Hilfe von Online-Sessions abgerundet werden. Den Ärtzen in Äthiopien soll die Möglichkeit gegeben werden den Content der Webanwendung zu steuern, hierzu möchten wir eine Feedback-Funktion implementieren.
 
 **Storyboard:**
 
