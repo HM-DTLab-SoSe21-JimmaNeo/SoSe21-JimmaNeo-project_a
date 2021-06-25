@@ -1,3 +1,12 @@
+# Team aLive
+
+Als Team möchten wir uns nochmals bei den Auftraggebern Victoria Lieftüchter und Dr. Tobais Reicherzer für die Möglichkeit bedanken an diesem Projekt teilzunehmen. Ein weiterer Dank geht an Lars Schmitz für die Unterstützung im Projekt.
+
+Wir hoffen wir haben es durch unseren Prototypen geschafft, dass Projekt voranzutreiben und richtige Impulse zu setzten. 
+
+
+
+
 # PressRelease
 
 Heute hat aLive Inc. eine E-Learning Plattform angekündigt, welche die Zusammenarbeit äthiopischer und deutscher Neonatologen vereinfacht. Der Fokus liegt hierbei vor allem darauf, Behandlungsmöglichkeiten und die Versorgung von Neugeborenen zu verbessern.
@@ -51,8 +60,6 @@ Im Hilfemenü können Nutzer die FAQ's einsehen um Fragen zur Anwendung und ihre
 ![](/documentation/Screenshots/Bildschirmfoto_2021-06-24_um_17.27.12.png)
 
 </details>
-
-
 
 ## Feedback Funktion
 
