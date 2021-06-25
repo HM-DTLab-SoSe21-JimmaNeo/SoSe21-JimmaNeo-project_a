@@ -77,6 +77,13 @@ Administratoren können die abgegebenen Feedbacks abrufen um so Fragen zu beantw
 
 In der Edit Quiz Funktion, kann der Administrator Multiple- oder Singlechoice-Quize erstellen. Es ist möglich die Fragen und Antworten hinzuzufügen und wieder zu löschen. Antwortmöglichkeiten können anschließend noch in ihren Wahrheitswert definiert werden. Die Anzahl der Quiz, Fragen und Antwortmöglichkeiten ist variabel und kann ebenfalls vom Administrator bearbeitet werden.
 
+<details><summary>Click to expand</summary>
+
+![](/documentation/Screenshots/Bildschirmfoto_2021-06-25_um_10.07.54.png)
+
+</details>
+
+
 ## Edit Course Funktion
 
 Administratoren können in unserer Webanwendung Kurse erstellen, bearbeiten und löschen. Bei der Erstellung und Bearbeitung können:
