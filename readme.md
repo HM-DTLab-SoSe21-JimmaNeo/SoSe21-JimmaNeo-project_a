@@ -1,11 +1,10 @@
 # Team aLive
 
-Als Team möchten wir uns nochmals bei den Auftraggebern Victoria Lieftüchter und Dr. Tobais Reicherzer für die Möglichkeit bedanken an diesem Projekt teilzunehmen. Ein weiterer Dank geht an Lars Schmitz für die Unterstützung im Projekt.
+Unser Ziel war es durch die Kombination von unterschiedlichen Präsentationsmöglichkeiten das medizinische Fachpersonal in Äthiopien gezielt an Themenschwerpunkte herzuführen, welche dann mit Hilfe von Online-Sessions abgerundet werden. Den Ärtzen in Äthiopien soll die Möglichkeit gegeben werden den Content der Webanwendung zu steuern, hierzu möchten wir eine Feedback-Funktion implementieren.
+
+Als Team möchten wir uns nochmals bei den Auftraggebern Victoria Lieftüchter und Dr. Tobais Reicherzer für die Möglichkeit bedanken an diesem Projekt teilzunehmen. Ein weiterer Dank geht an Lars Schmitz und Prof. Dr. Thomas Kofler für die Unterstützung im Projekt.
 
 Wir hoffen wir haben es durch unseren Prototypen geschafft, dass Projekt voranzutreiben und richtige Impulse zu setzten. 
-
-
-
 
 # PressRelease
 
