@@ -133,7 +133,7 @@ Hier werden Razorkomponenten verwendet, um einen dynamischen HTML-Code zu generi
 
 **Backend:**
 
-Der Sourcecode ist in C# geschrieben worden. Des weiteren sind Datenbankzugriffe möglich, wobei das C#-Framework LINQ die Geschäftslogik übernimmt.
+Der Sourcecode ist in C# geschrieben worden. Desweiteren sind Datenbankzugriffe möglich, wobei das C#-Framework LINQ die Geschäftslogik übernimmt.
 
 
 
