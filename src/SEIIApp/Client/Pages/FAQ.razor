@@ -2,6 +2,7 @@
 
 <h3 style="padding-bottom:12px">Stakeholder:</h3>
 <div class="accordion" id="accordionFaqOne" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <!--https://getbootstrap.com/docs/4.3/components/collapse/#accordion-example   -- in diesem Bootstrep habe ich kopiert-->
     <div class="card">
         <div class="card-header" id="headingOne">
             <h2 class="mb-0">
@@ -19,6 +20,7 @@
     </div>
     <div class="card">
         <div class="card-header" id="headingTwo">
+            <!--Die ID muss einzigartig sein, damit sich mehrere Elemente nicht öffnen -->
             <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                     Wird ein Langzeitsupport angeboten?
@@ -26,6 +28,7 @@
             </h2>
         </div>
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionFaqOne">
+            <!--Accordion text - für Antwort. Darüber ist ein Button, der mit ID (Zeile 23) verbunden wird-->
             <div class="card-body">
                 Da es ein Open Source Projekt ist, kann die Community selbst Updates erstellen.
             </div>
@@ -351,8 +354,8 @@
 ">
     Administratoren:
 </h3>
-<div class="accordion" id="accordionFaqThree" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
-    <div class="card">
+<div class="accordion" id="accordionFaqThree" style="box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">   <!--Ab hier beginnt ein unabhängiges Element, neues Accordion und daruch kann man die Accardions trennen-->
+    <div class="card">                      <!--Style shadow habe ich von der Gruppe-->
         <div class="card-header" id="headingTwentyFive">
             <h2 class="mb-0">
                 <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwentyFive" aria-expanded="false" aria-controls="collapseTwentyFive">
@@ -394,7 +397,7 @@
                 </button>
             </h2>
         </div>
-        <div id="collapseTwentySeven" class="collapse" aria-labelledby="headingTwentySeven" data-parent="#accordionFaqTwentySeven">
+        <div id="collapseTwentySeven" class="collapse" aria-labelledby="headingTwentySeven" data-parent="#accordionFaqThree">
             <div class="card-body">
 
                 Als Administrator kann man in der Kursansicht auf Bearbeiten klicken.
@@ -402,45 +405,46 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="card">
-    <div class="card-header" id="headingTwentyEight">
-        <h2 class="mb-0">
-            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwentyEight" aria-expanded="false" aria-controls="collapseTwentyEight">
-                Was passiert, wenn der Administrator die Lerneinheit aus aLive entfernt?
-            </button>
-        </h2>
-    </div>
-    <div id="collapseTwentyEight" class="collapse" aria-labelledby="headingTwentyEight" data-parent="#accordionFaqThree">
-        <div class="card-body">
-            Wenn der Kurs von dem Lehrer gelöscht wird,  wird automatisch bei der Nutzer gelöscht. Der Kurs kann auch in einer bestimmten Zeitraum wiederhergedstellt werden.
+
+    <div class="card">
+        <div class="card-header" id="headingTwentyEight">
+            <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwentyEight" aria-expanded="false" aria-controls="collapseTwentyEight">
+                    Was passiert, wenn der Administrator die Lerneinheit aus aLive entfernt?
+                </button>
+            </h2>
+        </div>
+        <div id="collapseTwentyEight" class="collapse" aria-labelledby="headingTwentyEight" data-parent="#accordionFaqThree">
+            <div class="card-body">
+                Wenn der Kurs von dem Lehrer gelöscht wird,  wird automatisch bei der Nutzer gelöscht. Der Kurs kann auch in einer bestimmten Zeitraum wiederhergedstellt werden.
+            </div>
         </div>
     </div>
 </div>
 
+<!---Ab hier beginnt Design-->
 <style>
-
+    /*hier steht die Frage*/
     .card-header {
-        background-color: #4dad4f;
-        height: 4rem;
-        text-decoration: none;
+        background-color: #4dad4f; /*grün*/
+        height: 4rem; /*fixe Höhe*/
+        text-decoration: none; /*wird nicht unterstrichen, wenn man zu Frage geht*/
     }
 
-    .btn-link {
+    .btn-link { /*hier wird die Schriftfarbe von dem Knopf verändert*/
         color: #ffffff;
     }
 
-        .btn-link:hover {
-            margin-top:0;
-            padding-top:0;
-            font-size: 26px;
-            color: #ffffff;
+        .btn-link:hover { /*Wenn man mit dem MAus drübergeht, wird der Text größer */
+            margin-top: 0;   /*Platz geht bis an den Rand*/
+            padding-top: 0;   /*---*/
+            font-size: 26px;      /*Textgröße machen*/
+            color: #ffffff;        /*Scgriffarbe ist weiß und soll nicht ändern*/
             text-decoration: none;
         }
 
         .btn-link:focus {
             text-decoration: none;
         }
-
 </style>
