@@ -67,8 +67,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Components\AnswerDefComponent.razor" />
-    <None Include="Components\QuestionDefComponent.razor" />
+    <None Include="Shared\AnswerDefComponent.razor" />
+    <None Include="Shared\QuestionDefComponent.razor" />
     <None Include="Shared\ContentTypePreview.razor" />
     <None Include="wwwroot\Newsletter\images\.DS_Store" />
     <None Include="wwwroot\Newsletter\images\baby.png" />
